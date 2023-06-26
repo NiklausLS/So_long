@@ -18,19 +18,23 @@ OBJS = $(SRCS:.c=.o)
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
-	@echo "$(YELLOW)Making objets files : $(GREEN)$@ $(RESET)"
+	@echo "$(GREEN)--- Making objets files : $(YELLOW)$@ $(GREEN)---$(RESET)"
 
 $(NAME): $(OBJS)
+	@echo "$(GREEN)--- Making the executable : $(YELLOW)$(NAME) $(GREEN)---$(RESET)"
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 
 clean:
 	$(RM) $(OBJS) 	
+	@echo "$(RED)--- Objects files have been deleted. ---$(RESET)" 	
 
 fclean: clean
 	$(RM) $(NAME)
+	@echo "$(RED)--- The executable $(YELLOW)$(NAME) $(RED)have been deleted. ---$(RESET)"
 
 re: fclean all
+	@echo "$(GREEN)--- Rebuilding everything ---$(RESET)"
 
 .PHONY: all clean fclean re
