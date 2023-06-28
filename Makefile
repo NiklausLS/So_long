@@ -1,5 +1,6 @@
-SRCS = main.c  
-
+SRCS = main.c \
+	./parsing/check_ber.c 
+	
 RESET = \033[0m
 GREEN = \033[32m
 RED = \033[31m

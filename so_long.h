@@ -3,6 +3,6 @@
 
 #include <stdio.h>
 
-void	test(void);
+void	check_ber(char *file);
 
 #endif
