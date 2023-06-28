@@ -1,5 +1,6 @@
 SRCS = main.c \
-	./parsing/check_ber.c 
+	./parsing/check_ber.c \
+	./printing/print_error.c 
 	
 RESET = \033[0m
 GREEN = \033[32m

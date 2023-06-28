@@ -4,12 +4,18 @@ int	main()
 {	
 	char *f1;
 	char *f2;
+	int	i;
+	int	j;
+	
+	f1 = "--- checking test.ber";
+	printf("%s\n", f1);
+	i = check_ber(f1);
+	print_error(i);
 
-	f1 = "test.ber";
-	f2 = "test.br";
-
-	check_ber(f1);
-	check_ber(f2);
+	f2 = "--- checking test.br";
+	printf("%s\n", f2);
+	j = check_ber(f2);
+	print_error(j);
 //	printf("---- Makefile test ----\n");	
 	return (0);
 }

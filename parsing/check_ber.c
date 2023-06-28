@@ -4,7 +4,7 @@
 
 //and i have to check if im opening a file
 
-void	check_ber(char *str)
+int	check_ber(char *str)
 {
 	int	i;
 	
@@ -15,10 +15,11 @@ void	check_ber(char *str)
 		&& str[i - 1] == 'r')
 	{
 		printf(".ber OK\n");
-		//Contain so OK
-		//so OPEN		
+		//so OPEN
+		return (0);	
 	}
 	else
 		printf(".ber PAS OK\n");
-		//error
+		return (-2);
+	return (0);
 }

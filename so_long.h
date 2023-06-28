@@ -3,6 +3,11 @@
 
 #include <stdio.h>
 
-void	check_ber(char *file);
+#include <unistd.h>
+
+int	check_ber(char *file);
+
+
+void	print_error(int check);
 
 #endif
