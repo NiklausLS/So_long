@@ -5,9 +5,10 @@
 
 #include <unistd.h>
 
-int	check_ber(char *file);
-
-
+int	main(int argc, char **argv);
+int	check_ber(char *str);
+int	check_argc(int argc);
+void	check_all(int argc, char **argv);
 void	print_error(int check);
 
 #endif

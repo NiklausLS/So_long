@@ -1,8 +1,8 @@
 #include "so_long.h"
 
-int	main()
+int	main(int argc, char **argv)
 {	
-	char *f1;
+	/*char *f1;
 	char *f2;
 	int	i;
 	int	j;
@@ -16,6 +16,8 @@ int	main()
 	printf("%s\n", f2);
 	j = check_ber(f2);
 	print_error(j);
-//	printf("---- Makefile test ----\n");	
+//	printf("---- Makefile test ----\n");*/
+
+	check_all(argc, argv);	
 	return (0);
 }

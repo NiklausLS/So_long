@@ -1,5 +1,7 @@
 SRCS = main.c \
 	./parsing/check_ber.c \
+	./parsing/check_args.c \
+	./parsing/check_all.c \
 	./printing/print_error.c 
 	
 RESET = \033[0m
