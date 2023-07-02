@@ -1,6 +1,7 @@
 SRCS = main.c \
 	./parsing/check_ber.c \
 	./parsing/check_args.c \
+	./parsing/check_if_file.c \
 	./parsing/check_all.c \
 	./printing/print_error.c 
 	
