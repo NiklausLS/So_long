@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 06:24:44 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/07 07:02:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int	main(int argc, char **argv);
 int	check_ber(char *str);
 int	check_argc(int argc);
-int	check_if_file(char **argv);
+int	check_if_file(char *str);
 void	check_all(int argc, char **argv);
 void	print_error(int check);
 
