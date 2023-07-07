@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 06:31:33 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/07 10:44:24 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int	check_ber(char *str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 		i++;
@@ -27,10 +27,12 @@ int	check_ber(char *str)
 		&& str[i - 1] == 'r')
 	{
 		printf(".ber OK\n");
-		return (0);	
+		return (0);
 	}
 	else
+	{
 		printf(".ber KO\n");
-		return (-2);
+		return (-1);
+	}
 	return (0);
 }

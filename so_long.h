@@ -6,23 +6,22 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 09:43:35 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/07 10:48:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include <stdio.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <mlx.h>
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <mlx.h>
-
-int	main(int argc, char **argv);
-int	check_ber(char *str);
-int	check_argc(int argc);
-int	check_if_file(char *str);
+int		main(int argc, char **argv);
+in		check_ber(char *str);
+int		check_argc(int argc);
+int		check_if_file(char *str);
 void	check_all(int argc, char **argv);
 void	print_error(int check);
 

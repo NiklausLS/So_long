@@ -6,25 +6,24 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 07:03:33 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/07 11:30:21 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
 //use all my checkings functions at once
-
 //check argc OK
 //check .BER OK
-
-//to do list
 //check if the file can be open
 //check if it is a file and not an repertory
-//check if the map is valid
 
+//to do
+//check if the map is valid
+//check if you can open i outside the file
 
 void	check_all(int argc, char **argv)
-{;
+{
 	char	*str;
 
 	str = argv[1];
