@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 07:02:18 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/07 09:43:35 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 #include <unistd.h>
 #include <fcntl.h>
+#include <mlx.h>
 
 int	main(int argc, char **argv);
 int	check_ber(char *str);

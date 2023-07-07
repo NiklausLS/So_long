@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2023/07/07 06:23:04 by nileempo         ###   ########.fr        #
+#    Updated: 2023/07/07 09:45:44 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,17 +29,19 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
+MLXFLAGS =  -I /usr/local/include -g -L /usr/local/lib/ -lmlx -framework OpenGL -framework AppKit
+
 RM = rm -f
 
 OBJS = $(SRCS:.c=.o)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -Imlx -c $< -o $(<:.c=.o)
 	@echo "$(GREEN)--- Making objets files : $(YELLOW)$@ $(GREEN)---$(RESET)"
 
 $(NAME): $(OBJS)
 	@echo "$(GREEN)--- Making the executable : $(YELLOW)$(NAME) $(GREEN)---$(RESET)"
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(MLXFLAGS) $(OBJS) -o $(NAME)
 
 all: $(NAME)
 

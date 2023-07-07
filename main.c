@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 07:02:32 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/07 09:49:40 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,14 @@
 
 int	main(int argc, char **argv)
 {	
-	/*char *f1;
-	char *f2;
-	int	i;
-	int	j;
-	
-	f1 = "--- checking test.ber";
-	printf("%s\n", f1);
-	i = check_ber(f1);
-	print_error(i);
+	void	*mlx_ptr;
+	void	*win_ptr;
 
-	f2 = "--- checking test.br";
-	printf("%s\n", f2);
-	j = check_ber(f2);
-	print_error(j);
-//	printf("---- Makefile test ----\n");*/
+	check_all(argc, argv);
 
-	check_all(argc, argv);	
+	mlx_ptr = mlx_init();
+	win_ptr = mlx_new_window(mlx_ptr, 500, 500, "so_long");
+	mlx_loop(mlx_ptr);
+		
 	return (0);
 }
