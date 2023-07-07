@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 11:30:21 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/07 12:47:31 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 //to do
 //check if the map is valid
 //check if you can open i outside the file
+//check if only one character/exit
 
 void	check_all(int argc, char **argv)
 {
