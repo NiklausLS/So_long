@@ -6,19 +6,19 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 14:22:58 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:57:08 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-/*void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
 	dst = data->addr + (y * data->line_lenght + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
-}*/
+}
 
 int	main(int argc, char **argv)
 {
@@ -31,12 +31,11 @@ int	main(int argc, char **argv)
 	mlx = mlx_init();
 	window = mlx_new_window(mlx, 900, 600, "so_long");
 
+	img.img = mlx_new_image(mlx, 900, 600);
+	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
+				&img.line_lenght, &img.endian);
 
-//	img.img = mlx_new_image(mlx, 900, 600);
-//	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
-//				&img.line_lenght, &img.endian);
-
-//	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
+	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
 	
 //	mlx_xpm_file_to_image(mlx, 
 	

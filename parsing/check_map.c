@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 14:17:46 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:47:20 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,20 @@
 //1 E
 //1 C
 //walls all around
-//0 for empty spaces
+//0 for empty spaces 
+//
+//so the map can only contain P E C 1 0
 
-static char	*get_buf(int fd, char *memory)
+
+void	check_elem(int	fd, char *file)
 {
-	int		rd;
-	char	*buf;
+	int	x;
+	int	y;
 
-	rd = 1;
-	bif = (char *)malloc(sizeof(char) * 1);
-	if (!buf)
-		return (NULL);
-	while (rd > 0)
+	while (file[x])
 	{
-		rd = read(fd
+		
+
+	}
+}
+
