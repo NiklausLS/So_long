@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 13:07:01 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:21:45 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <mlx.h>
+
+# include "gnl/get_next_line.h"
 
 typedef struct	s_data {
 	void	*img;

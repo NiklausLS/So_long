@@ -6,11 +6,13 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2023/07/07 09:45:44 by nileempo         ###   ########.fr        #
+#    Updated: 2023/07/10 14:20:16 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.c \
+	./gnl/get_next_line.c \
+	./gnl/get_next_line_utils.c \
 	./parsing/check_ber.c \
 	./parsing/check_args.c \
 	./parsing/check_if_file.c \

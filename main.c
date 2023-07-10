@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 13:28:17 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/10 14:22:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,18 @@ int	main(int argc, char **argv)
 
 	mlx = mlx_init();
 	window = mlx_new_window(mlx, 900, 600, "so_long");
-	img.img = mlx_new_image(mlx, 900, 600);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
-				&img.line_lenght, &img.endian);
+
+
+//	img.img = mlx_new_image(mlx, 900, 600);
+//	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
+//				&img.line_lenght, &img.endian);
 
 //	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
 	
 //	mlx_xpm_file_to_image(mlx, 
 	
-	mlx_put_image_to_window(init, window, img.img, 5, 5);
+	mlx_put_image_to_window(mlx, window, img.img, 5, 5);
 
-	mlx_loop(init);
+	mlx_loop(mlx);
 	return (0);
 }

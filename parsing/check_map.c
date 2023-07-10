@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_if_file.c                                    :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:26 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 14:12:49 by nileempo         ###   ########.fr       */
+/*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
+/*   Updated: 2023/07/10 14:17:46 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	check_if_file(char *str)
-{
-	int	fd;
+//i have to check if the map is OK
 
-	printf("--- test check if file ---\n");
-	fd = open(str, O_DIRECTORY);
-	printf("argv[1] = %s\nfd = %d\n", str, fd);
-	if (fd < 0)
+//i need :
+//1 P
+//1 E
+//1 C
+//walls all around
+//0 for empty spaces
+
+static char	*get_buf(int fd, char *memory)
+{
+	int		rd;
+	char	*buf;
+
+	rd = 1;
+	bif = (char *)malloc(sizeof(char) * 1);
+	if (!buf)
+		return (NULL);
+	while (rd > 0)
 	{
-		write(1, "FILE OK\n", 8);
-		return (fd);
-	}
-	else
-		write (1, "FILE KO\n", 8);
-	return (1);
-}
+		rd = read(fd

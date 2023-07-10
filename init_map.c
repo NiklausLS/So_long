@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_if_file.c                                    :+:      :+:    :+:   */
+/*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:26 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 14:12:49 by nileempo         ###   ########.fr       */
+/*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
+/*   Updated: 2023/07/10 14:12:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
-int	check_if_file(char *str)
+//i want to check the position of my elements in the map
+//and fill it with the right images
+
+//1-Opening the map
+//2-Checking the position of the elements
+
+void	init_map(char *file)
 {
 	int	fd;
 
-	printf("--- test check if file ---\n");
-	fd = open(str, O_DIRECTORY);
-	printf("argv[1] = %s\nfd = %d\n", str, fd);
-	if (fd < 0)
-	{
-		write(1, "FILE OK\n", 8);
-		return (fd);
+	fd = open(file, O_RDONLY);
+	printf("fd = %d\n", fd);
+	if (fd == -1)
+		printf("FD ERROR\n");
+	
+
+
+
 	}
-	else
-		write (1, "FILE KO\n", 8);
-	return (1);
+
 }

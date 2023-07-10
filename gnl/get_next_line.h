@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_if_file.c                                    :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:26 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 14:12:49 by nileempo         ###   ########.fr       */
+/*   Created: 2023/01/27 14:54:14 by nileempo          #+#    #+#             */
+/*   Updated: 2023/04/04 13:03:47 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	check_if_file(char *str)
-{
-	int	fd;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-	printf("--- test check if file ---\n");
-	fd = open(str, O_DIRECTORY);
-	printf("argv[1] = %s\nfd = %d\n", str, fd);
-	if (fd < 0)
-	{
-		write(1, "FILE OK\n", 8);
-		return (fd);
-	}
-	else
-		write (1, "FILE KO\n", 8);
-	return (1);
-}
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+
+char	*get_next_line(int fd);
+size_t	ft_strlen(char *s);
+char	*ft_strjoin(char *memory, char *buf);
+char	*ft_strchr(char *s, int c);
+
+#endif
