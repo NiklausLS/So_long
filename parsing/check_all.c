@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 14:59:29 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 11:32:37 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,45 @@
 //check if you can open i outside the file
 //check if only one character/exit
 
-void	open_map(char *file)
+static char	*open_map(char *file)
 {
-	int	fd;
+	int		fd;
+	char	*line;
+	char	*map;
 
-	fd = 1;
 	fd = open(file, O_RDONLY);
-	printf("opem_map fd = %d\n", fd);
 	if (fd == -1)
 		write (1, "OPEN ERROR\n", 11);
+	line = "";
+	map = ft_calloc(1, 1);
+	while (line)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		map = ft_strjoin(map, line);
+		free(line);
+	}
+	close(fd);
+	system("leaks so_long");
+	return (map);
 }
 
 void	check_all(int argc, char **argv)
 {
 	char	*file;
+	char	*map;
 
 	file = argv[1];
+	map = NULL;
 	check_argc(argc);
 	check_ber(argv[1]);
 	check_if_file(file);
-	open_map(file);
+
+	map = open_map(file);
+	puts("avant check_elem\n");
+	printf("--- map --- \n%s\n", map);
+	check_elem(map);
+
+	free(map);
 }

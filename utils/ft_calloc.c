@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 11:22:29 by nileempo         ###   ########.fr       */
+/*   Created: 2022/11/21 15:03:10 by nileempo          #+#    #+#             */
+/*   Updated: 2023/07/13 10:59:20 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-//i want to check the position of my elements in the map
-//and fill it with the right images
-
-//1-Opening the map
-//2-Checking the position of the elements
-
-void	init_map(char *file)
+void	*ft_calloc(size_t ecount, size_t esize)
 {
-	int	fd;
+	void	*ptr;
 
-	fd = open(file, O_RDONLY);
-	printf("fd = %d\n", fd);
-	if (fd == -1)
-		printf("FD ERROR\n");
-	
-
-
-
-	}
-
+	if (ecount && esize > SIZE_MAX / ecount)
+		return (NULL);
+	ptr = malloc(ecount * esize);
+	if (ptr == NULL)
+		return (0);
+	ft_bzero(ptr, ecount * esize);
+	return (ptr);
 }

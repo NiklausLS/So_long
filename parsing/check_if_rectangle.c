@@ -6,12 +6,13 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 12:05:46 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 06:40:28 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.c"
 
+//check if the mqp is a rectangle
 void	check_if_rectangle(char *file)
 {
 	int		x;

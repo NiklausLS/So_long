@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2023/07/10 14:20:16 by nileempo         ###   ########.fr        #
+#    Updated: 2023/07/13 11:14:05 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,13 @@ SRCS = main.c \
 	./parsing/check_ber.c \
 	./parsing/check_args.c \
 	./parsing/check_if_file.c \
+	./parsing/check_map.c \
 	./parsing/check_all.c \
-	./printing/print_error.c 
-	
+	./printing/print_error.c \
+	./utils/ft_memset.c \
+	./utils/ft_bzero.c \
+	./utils/ft_calloc.c
+
 RESET = \033[0m
 GREEN = \033[32m
 RED = \033[31m
@@ -48,7 +52,7 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) 	
+	$(RM) $(OBJS)
 	@echo "$(RED)--- Objects files have been deleted. ---$(RESET)" 	
 
 fclean: clean

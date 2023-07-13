@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 11:22:29 by nileempo         ###   ########.fr       */
+/*   Created: 2022/11/09 08:42:33 by nileempo          #+#    #+#             */
+/*   Updated: 2023/07/13 10:57:35 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-//i want to check the position of my elements in the map
-//and fill it with the right images
-
-//1-Opening the map
-//2-Checking the position of the elements
-
-void	init_map(char *file)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	fd;
+	char	*str;
 
-	fd = open(file, O_RDONLY);
-	printf("fd = %d\n", fd);
-	if (fd == -1)
-		printf("FD ERROR\n");
-	
-
-
-
+	str = s;
+	while (n)
+	{
+		*str = (unsigned char)c;
+		str++;
+		n--;
 	}
-
+	return (s);
 }
