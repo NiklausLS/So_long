@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 09:44:28 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 11:51:43 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,25 @@
 int	check_elem(char *file)
 {
 	int	i;
-	int	j;
+	char *str;
 
 	i = 0;
-	j = 0;
+	str = file;
 	printf("--- check_elem ---\n");
-	printf("elem is : %c\n", file[j++]);
-	while (file[i])
+	//printf("elem is : %s\n", file);
+	while (str[i])
 	{
-		if (file[i] != 'P' && file[i] != 'E' && file[i] != 'C'
-				&& file[i] != '1' && file[i] != '0')
+		if (str[i] != 'P' && str[i] != 'E' && str[i] != 'C'
+			&& str[i] != '1' && str[i] != '0')
 		{
+			printf ("str[i] = %c\n", str[i]);
 			printf ("character is incorrect\n");
+			break ;
 			return (-1);
 		}
 		else
 		{
-			printf("file[i] = %d\n", file[i]);
+			printf("str[i] = %c\n", str[i]);
 			i++;
 		}
 	}
