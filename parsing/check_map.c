@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 12:45:22 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:58:48 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,36 @@
 int	check_elem(char **map)
 {
 	int	i;
-	char *str;
+	int	j;
 
 	i = 0;
-	str = *map;
-	printf("--- check_elem ---\n");
-	//printf("elem is : %s\n", file);
-	while (str[i])
+	printf("--- check_elements ---\n");
+	while (map[i])
 	{
-		if (str[i] != 'P' && str[i] != 'E' && str[i] != 'C'
-			&& str[i] != '1' && str[i] != '0')
+		j = 0;
+//		printf("J = %d\n", j);
+		while (map[i][j])
 		{
-			printf ("str[i] = %c\n", str[i]);
-			printf ("character is incorrect\n");
-			break ;
-			return (-1);
+//			printf("TEST map[i][j] = %c\n", map[i][j]);
+			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
+				&& map[i][j] != '1' && map[i][j] != '0')
+			{
+//				printf ("character is incorrect\n");
+				break ;
+				return (-1);
+			}
+		//	else
+		//	{
+//				printf("map[i] = %s\n", map[i]);
+//				printf("BOUCLE J = %d\n", j);
+				j++;
+		//	}
 		}
-		else
-		{
-			printf("str[i] = %c\n", str[i]);
-			i++;
-		}
+		printf("map[i] = %s\n", map[i]);
+		i++;
+		puts("A");
 	}
+	puts("Z");
 	return (0);
 }
 

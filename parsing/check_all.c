@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 12:45:45 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:56:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ static char	**open_map(char *file)
 //	printf("str = %s\n", str);
 	close(fd);
 	map = ft_split(str, '\n');
+	free(str);
 //	system("leaks so_long");
 	return (map);
 }
@@ -57,23 +58,17 @@ void	check_all(int argc, char **argv)
 {
 	char	*file;
 	char	**map;
-	int		i;
 
 	file = argv[1];
 	map = NULL;
-	i = 0;
 	check_argc(argc);
 	check_ber(argv[1]);
 	check_if_file(file);
 
 	map = open_map(file);
-	puts("avant check_elem\n");
-	printf("--- map --- \n%s\n", *map);
-	while (map)
-	{
-		check_elem(&map[i]);
-		printf("map = %s\n", map[i]);
-		i++;
-	}
-	free(map);
+//	puts("avant check_elem");
+	printf("--- map --- \n");
+	check_elem(map);
+	puts("END");
+//	free(map);
 }
