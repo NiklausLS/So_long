@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2023/07/13 11:14:05 by nileempo         ###   ########.fr        #
+#    Updated: 2023/07/13 12:35:22 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,9 @@ SRCS = main.c \
 	./printing/print_error.c \
 	./utils/ft_memset.c \
 	./utils/ft_bzero.c \
-	./utils/ft_calloc.c
+	./utils/ft_calloc.c \
+	./utils/ft_substr.c \
+	./utils/ft_split.c
 
 RESET = \033[0m
 GREEN = \033[32m

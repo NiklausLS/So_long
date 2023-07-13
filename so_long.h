@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 11:11:17 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 12:45:11 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		main(int argc, char **argv);
 int		check_ber(char *str);
 int		check_argc(int argc);
 int		check_if_file(char *str);
-int		check_elem(char *file);
+int		check_elem(char **map);
 
 void	check_all(int argc, char **argv);
 
@@ -49,5 +49,7 @@ void	print_error(int check);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void*s, size_t n);
 void	*ft_calloc(size_t ecount, size_t esize);
+char	*ft_substr(char *s, unsigned int start, size_t len);
+char	**ft_split(char *s, char c);
 
 #endif

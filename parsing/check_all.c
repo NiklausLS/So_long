@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 11:32:37 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 12:45:45 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,45 +23,57 @@
 //check if you can open i outside the file
 //check if only one character/exit
 
-static char	*open_map(char *file)
+static char	**open_map(char *file)
 {
 	int		fd;
 	char	*line;
-	char	*map;
+	char	*str;
+	char	**map;
+	int		i;
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
 		write (1, "OPEN ERROR\n", 11);
 	line = "";
-	map = ft_calloc(1, 1);
+	str = ft_calloc(1, 1);
+	i = 0;
 	while (line)
 	{
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
-		map = ft_strjoin(map, line);
+		str = ft_strjoin(str, line);
 		free(line);
+		i++;
 	}
+//	printf("str = %s\n", str);
 	close(fd);
-	system("leaks so_long");
+	map = ft_split(str, '\n');
+//	system("leaks so_long");
 	return (map);
 }
 
 void	check_all(int argc, char **argv)
 {
 	char	*file;
-	char	*map;
+	char	**map;
+	int		i;
 
 	file = argv[1];
 	map = NULL;
+	i = 0;
 	check_argc(argc);
 	check_ber(argv[1]);
 	check_if_file(file);
 
 	map = open_map(file);
 	puts("avant check_elem\n");
-	printf("--- map --- \n%s\n", map);
-	check_elem(map);
-
+	printf("--- map --- \n%s\n", *map);
+	while (map)
+	{
+		check_elem(&map[i]);
+		printf("map = %s\n", map[i]);
+		i++;
+	}
 	free(map);
 }

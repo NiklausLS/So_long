@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 11:51:43 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 12:45:22 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 //
 //so the map can only contain P E C 1 0
 
-int	check_elem(char *file)
+int	check_elem(char **map)
 {
 	int	i;
 	char *str;
 
 	i = 0;
-	str = file;
+	str = *map;
 	printf("--- check_elem ---\n");
 	//printf("elem is : %s\n", file);
 	while (str[i])
