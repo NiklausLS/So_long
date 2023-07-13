@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 13:58:48 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 14:36:17 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,34 @@ int	check_elem(char **map)
 	return (0);
 }
 
+int	check_nbr_of_elem(char **map)
+{
+	int	i;
+	int	j;
+	t_map check;
+
+	i = 0;
+	check.p = 0;
+	check.e = 0;
+	check.c = 0;
+	printf("---check_nbr_of_elements ---\n");
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			if (map[i][j] == 'P')
+				check.p++;
+			if (map[i][j] == 'E')
+				check.e++;
+			if (map[i][j] == 'C')
+				check.c++;
+			j++;
+		}
+		i++;
+	}
+	printf("P = %d\n", check.p);
+	printf("E = %d\n", check.e);
+	printf("C = %d\n", check.c);
+	return (i);
+}

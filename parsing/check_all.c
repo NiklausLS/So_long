@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 14:06:44 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 14:21:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	check_all(int argc, char **argv)
 //	puts("avant check_elem");
 	printf("--- map --- \n");
 	check_elem(map);
+	check_nbr_of_elem(map);
 
 //	system("leaks so_long");
 	puts("END");
