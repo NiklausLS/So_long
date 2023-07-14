@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 10:00:06 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 10:37:48 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,13 @@
 //check if the map is valid
 //check if you can open i outside the file
 //check if only one character/exit
+//check if the side characters are only made of 1 OK
+//check if there is a correct path
 
 //i open a file
 //read it
 //join and split every part
 //and return a tab of string
-
 static char	**open_map(char *file)
 {
 	int		fd;
@@ -74,6 +75,9 @@ void	check_all(int argc, char **argv)
 	check_if_rectangle(map);
 	
 	check_side_walls(map);
+
+//	count_line(map);
+	check_top_bottom_walls(map);
 
 	puts("end of check_all\n");
 /*	system("leaks so_long");

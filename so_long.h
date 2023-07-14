@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 10:15:25 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 10:44:56 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		check_elem(char **map);
 void	find_nbr_of_elem(char **map);
 void	check_if_rectangle(char **map);
 void	check_side_walls(char **map);
+void	check_top_bottom_walls(char **map);
 
 void	check_all(int argc, char **argv);
 

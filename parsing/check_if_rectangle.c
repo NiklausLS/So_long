@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 09:59:52 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 10:44:44 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,54 @@ void	check_side_walls(char **map)
 		}
 		i++;
 	}
-	puts("end of check_walls\n");
+	puts("end of check_side_walls\n");
 }
 
+static int	count_line(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	puts("begin of count_line\n");
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+			j++;
+		printf("line is : %s\n", map[i]);
+		i++;
+	}
+	printf("count line = %d\n", i);
+
+	puts("end of count_line\n");
+	return (i);
+}
+
+void	check_top_bottom_walls(char **map)
+{
+	int	i;
+	int	j;
+
+	i = count_line(map);
+	j = 0;
+	puts("begin of check_top_bottom_walls\n");
+	while (map[0][j])
+	{
+		puts("test\n");
+		if (map[0][j] != '1')
+			printf("first line is not made of 1\n");
+		j++;
+	}
+	j = 0;
+	puts("second boucle\n");
+	i -= 1;
+	while (map[i][j])
+	{
+		puts("test last\n");
+		if (map[i][j] != '1')
+			printf("last line is not made of 1\n");
+		j++;	
+	}
+	puts("end of check_top_bottom_walls\n");
+}
