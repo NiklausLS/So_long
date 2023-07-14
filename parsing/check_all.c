@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 11:27:37 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 12:17:17 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,8 @@ void	check_all(int argc, char **argv)
 	
 	check_side_walls(map);
 
-	check_top_bottom_walls(map);
+	check_top_wall(map);
+	check_bottom_wall(map);
 
 	puts("end of check_all\n");
 /*	system("leaks so_long");

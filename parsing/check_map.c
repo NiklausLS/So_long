@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 11:53:23 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 12:15:25 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,28 @@ int	find_nbr_of_elem(char **map)
 		}
 		i++;
 	}
+	return (0);
+}
+
+int	check_nbr_of_elem(t_map check)
+{
+	if (check.p != 1)
+	{
+		ft_putstr("Error\nStarting position : K.O\n");
+		return (-1);
+	}
+	if (check.e != 1)
+	{
+		ft_putstr("Error\nExit : K.O\n");
+		return (-1);
+	}
+	if (check.c < 1)
+	{
+		ft_putstr("Error\nCollectible : K.O\n");
+		return (-1);
+	}
+	printf("check.p = %d\n", check.p);
+	printf("check.e = %d\n", check.e);
+	printf("check.c = %d\n", check.c);
 	return (0);
 }

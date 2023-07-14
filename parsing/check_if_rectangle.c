@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 12:00:24 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 12:16:44 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,9 +105,9 @@ int	check_bottom_wall(char **map)
 	int	j;
 
 	i = count_line(map);
+	j = 0;
 	while (map[i][j])
 	{
-		j = 0;
 		if (map[i][j] != '1')
 		{
 			printf("Error\nBottom wall : K.O\n");
