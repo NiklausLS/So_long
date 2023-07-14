@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 09:53:06 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:59:52 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	check_if_rectangle(char **map)
 }
 
 //check if horizontal walls are only made of 1
-void	check_walls(char **map)
+void	check_side_walls(char **map)
 {
 	int	i;
 	int	j;
