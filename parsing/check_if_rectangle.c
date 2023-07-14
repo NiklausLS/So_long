@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 11:42:55 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 12:00:24 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,10 @@ static int	count_line(char **map)
 }
 
 //check if top and bottom walls are only made of 1
-int	check_top_bottom_walls(char **map)
+int	check_top_wall(char **map)
 {
-	int	i;
 	int	j;
 
-	i = count_line(map);
 	j = 0;
 	while (map[0][j])
 	{
@@ -98,16 +96,24 @@ int	check_top_bottom_walls(char **map)
 		}
 		j++;
 	}
-	j = 0;
-	i -= 1;
+	return (0);
+}
+
+int	check_bottom_wall(char **map)
+{
+	int	i;
+	int	j;
+
+	i = count_line(map);
 	while (map[i][j])
 	{
+		j = 0;
 		if (map[i][j] != '1')
 		{
 			printf("Error\nBottom wall : K.O\n");
 			return (-1);
 		}
-		j++;	
+		j++;
 	}
 	return (0);
 }
