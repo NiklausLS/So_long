@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 14:36:17 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 07:13:15 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,11 @@ int	check_elem(char **map)
 		}
 		printf("map[i] = %s\n", map[i]);
 		i++;
-		puts("A");
 	}
-	puts("Z");
 	return (0);
 }
 
-int	check_nbr_of_elem(char **map)
+void	find_nbr_of_elem(char **map)
 {
 	int	i;
 	int	j;
@@ -69,18 +67,21 @@ int	check_nbr_of_elem(char **map)
 	check.p = 0;
 	check.e = 0;
 	check.c = 0;
-	printf("---check_nbr_of_elements ---\n");
+	printf("P = %d\n", check.p);
+	printf("E = %d\n", check.e);
+	printf("C = %d\n", check.c);
+	printf("---find_nbr_of_elements ---\n");
 	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 		{
 			if (map[i][j] == 'P')
-				check.p++;
+				check.p += 1;
 			if (map[i][j] == 'E')
-				check.e++;
+				check.e += 1;
 			if (map[i][j] == 'C')
-				check.c++;
+				check.c += 1;
 			j++;
 		}
 		i++;
@@ -88,5 +89,4 @@ int	check_nbr_of_elem(char **map)
 	printf("P = %d\n", check.p);
 	printf("E = %d\n", check.e);
 	printf("C = %d\n", check.c);
-	return (i);
 }

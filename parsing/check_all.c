@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 14:21:18 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 07:11:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ void	check_all(int argc, char **argv)
 {
 	char	*file;
 	char	**map;
+	t_map	*elements;
 
 	file = argv[1];
 	map = NULL;
+	elements = malloc(sizeof(t_map));
 	check_argc(argc);
 	check_ber(argv[1]);
 	check_if_file(file);
@@ -69,7 +71,7 @@ void	check_all(int argc, char **argv)
 //	puts("avant check_elem");
 	printf("--- map --- \n");
 	check_elem(map);
-	check_nbr_of_elem(map);
+	find_nbr_of_elem(map);
 
 //	system("leaks so_long");
 	puts("END");

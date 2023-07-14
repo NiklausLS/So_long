@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 11:22:48 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 14:57:04 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,8 @@ int	main(int argc, char **argv)
 				&img.line_lenght, &img.endian);
 
 	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-	
-//	mlx_xpm_file_to_image(mlx, 
-	
+		
 	mlx_put_image_to_window(mlx, window, img.img, 5, 5);
-
 	mlx_loop(mlx);
-
-
 	return (0);
 }

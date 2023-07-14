@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 14:32:40 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:14:07 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		check_ber(char *str);
 int		check_argc(int argc);
 int		check_if_file(char *str);
 int		check_elem(char **map);
-int		check_nbr_of_elem(char **map);
+void	find_nbr_of_elem(char **map);
 
 void	check_all(int argc, char **argv);
 
