@@ -6,13 +6,13 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 11:25:04 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:43:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void	check_ber(char *str)
+int	check_ber(char *str)
 {
 	int	i;
 
@@ -21,5 +21,9 @@ void	check_ber(char *str)
 		i++;
 	if (str[i - 4] != '.' || str[i - 3] != 'b' || str[i - 2] != 'e'
 		|| str[i - 1] != 'r')
+	{
 		ft_putstr("Error\n.ber K.O\n");
+		return (-1);
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 11:05:13 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:46:01 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ typedef struct s_map {
 
 int		main(int argc, char **argv);
 
-void	check_ber(char *str);
-void	check_argc(int argc);
-void	check_if_file(char *str);
+int		check_ber(char *str);
+int		check_argc(int argc);
+int		check_if_file(char *str);
 
 int		check_elem(char **map);
-void	find_nbr_of_elem(char **map);
-void	check_if_rectangle(char **map);
-void	check_side_walls(char **map);
-void	check_top_bottom_walls(char **map);
+int		find_nbr_of_elem(char **map);
+int		check_if_rectangle(char **map);
+int		check_side_walls(char **map);
+int		check_top_bottom_walls(char **map);
 
 void	check_all(int argc, char **argv);
 
