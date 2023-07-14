@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 08:10:51 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:53:06 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 //check if the map is a rectangle
 void	check_if_rectangle(char **map)
 {
-	int		i;
-	int		j;
-	int		next;
+	int	i;
+	int	j;
+	int	next;
 
 	i = 0;
 	printf("--- check_if_rectangle ---\n");
@@ -42,15 +42,28 @@ void	check_if_rectangle(char **map)
 }
 
 //check if horizontal walls are only made of 1
-/*void	check_walls(char *file)
+void	check_walls(char **map)
 {
-	
+	int	i;
+	int	j;
 
-}*/
+	i = 0;
+	puts("check_walls\n");
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			j = ft_strlen(map[i]);
+			printf("map[%d] = %s\n", i, map[i]);
+			if (map[i][0] != '1' || map[i][j - 1] != '1')
+				printf("NOT A WALL\n");
+			printf("map[%d][0] = %c | map[%d][%d] = %c\n", i, map[i][0], i, j, map[i][j - 1]);
+			if (map[i][0] == '1' && map[i][j - 1] == '1')
+				printf("WALLS ARE ALL 1\n");
+		}
+		i++;
+	}
+	puts("end of check_walls\n");
+}
 
-
-//int	check_x_walls
-
-//check if vertical walls are only made of 1
-
-//int	check_y_walls

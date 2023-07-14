@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 08:12:03 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:18:23 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,13 @@ void	check_all(int argc, char **argv)
 	check_if_file(file);
 	map = open_map(file);
 	check_elem(map);
+
 	find_nbr_of_elem(map);
 
 	check_if_rectangle(map);
+	
+	check_walls(map);
+
 	puts("end of check_all\n");
 /*	system("leaks so_long");
 	free(map);*/

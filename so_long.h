@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 08:09:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 09:20:32 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		check_if_file(char *str);
 int		check_elem(char **map);
 void	find_nbr_of_elem(char **map);
 void	check_if_rectangle(char **map);
+void	check_walls(char **map);
 
 void	check_all(int argc, char **argv);
 
@@ -59,5 +60,6 @@ void	ft_bzero(void*s, size_t n);
 void	*ft_calloc(size_t ecount, size_t esize);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 char	**ft_split(char *s, char c);
+int		ft_intstrlen(char *str);
 
 #endif
