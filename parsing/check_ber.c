@@ -6,33 +6,20 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 10:44:24 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:25:04 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-//i have to check if the file finish with .ber
-
-//and i have to check if im opening a file
-
-int	check_ber(char *str)
+void	check_ber(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
 		i++;
-	if (str[i - 4] == '.' && str[i - 3] == 'b' && str[i - 2] == 'e'
-		&& str[i - 1] == 'r')
-	{
-		printf(".ber OK\n");
-		return (0);
-	}
-	else
-	{
-		printf(".ber KO\n");
-		return (-1);
-	}
-	return (0);
+	if (str[i - 4] != '.' || str[i - 3] != 'b' || str[i - 2] != 'e'
+		|| str[i - 1] != 'r')
+		ft_putstr("Error\n.ber K.O\n");
 }

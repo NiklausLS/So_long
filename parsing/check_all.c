@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 10:37:48 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:27:37 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	check_all(int argc, char **argv)
 	
 	check_side_walls(map);
 
-//	count_line(map);
 	check_top_bottom_walls(map);
 
 	puts("end of check_all\n");

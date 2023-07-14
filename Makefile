@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2023/07/14 10:15:55 by nileempo         ###   ########.fr        #
+#    Updated: 2023/07/14 11:06:34 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ SRCS = main.c \
 	./utils/ft_bzero.c \
 	./utils/ft_calloc.c \
 	./utils/ft_substr.c \
-	./utils/ft_split.c
+	./utils/ft_split.c \
+	./utils/ft_putstr.c
 
 RESET = \033[0m
 GREEN = \033[32m

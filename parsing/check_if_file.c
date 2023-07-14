@@ -6,25 +6,20 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:26 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/10 14:12:49 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:18:50 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	check_if_file(char *str)
+void	check_if_file(char *str)
 {
 	int	fd;
 
-	printf("--- test check if file ---\n");
 	fd = open(str, O_DIRECTORY);
-	printf("argv[1] = %s\nfd = %d\n", str, fd);
-	if (fd < 0)
+	if (fd != -1)
 	{
-		write(1, "FILE OK\n", 8);
-		return (fd);
+		ft_putstr("Error\n");
+		ft_putstr("file K.O\n");
 	}
-	else
-		write (1, "FILE KO\n", 8);
-	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:50 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/07 06:24:55 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:13:15 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,5 @@
 void	print_error(int check)
 {
 	if (check < 0)
-		write(1, "Error\n", 6);
-	if (check == -2)
-	write(1, "Not .ber\n", 9);
+		ft_putstr("Error\n");	
 }

@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 10:44:44 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 11:24:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	check_if_rectangle(char **map)
 	int	next;
 
 	i = 0;
-	printf("--- check_if_rectangle ---\n");
 	while (map[i])
 	{
 		j = 0;
@@ -32,11 +31,12 @@ void	check_if_rectangle(char **map)
 		}
 		if (next != j)
 		{
-			printf("size are not the same : %d and %d\n", j, next);
+			ft_putstr("Error\nRectangle : K.O\n");
+			//printf("size are not the same : %d and %d\n", j, next);
 			break ;
 		}
 		next = j;
-		printf("map[i] : i = %d | J = %d | NEXT = %d\n", i, j, next);
+		//printf("map[i] : i = %d | J = %d | NEXT = %d\n", i, j, next);
 		i++;
 	}
 }
@@ -48,7 +48,6 @@ void	check_side_walls(char **map)
 	int	j;
 
 	i = 0;
-	puts("check_walls\n");
 	while (map[i])
 	{
 		j = 0;
@@ -57,37 +56,33 @@ void	check_side_walls(char **map)
 			j = ft_strlen(map[i]);
 			printf("map[%d] = %s\n", i, map[i]);
 			if (map[i][0] != '1' || map[i][j - 1] != '1')
-				printf("NOT A WALL\n");
-			printf("map[%d][0] = %c | map[%d][%d] = %c\n", i, map[i][0], i, j, map[i][j - 1]);
+				printf("Error\nSide wall : K.O\n");
+/*			printf("map[%d][0] = %c | map[%d][%d] = %c\n", i, map[i][0], i, j, map[i][j - 1]);
 			if (map[i][0] == '1' && map[i][j - 1] == '1')
-				printf("WALLS ARE ALL 1\n");
+				printf("WALLS ARE ALL 1\n");*/
 		}
 		i++;
 	}
-	puts("end of check_side_walls\n");
 }
 
+//count the number of line to check the last line in the next function
 static int	count_line(char **map)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	puts("begin of count_line\n");
 	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 			j++;
-		printf("line is : %s\n", map[i]);
 		i++;
 	}
-	printf("count line = %d\n", i);
-
-	puts("end of count_line\n");
 	return (i);
 }
 
+//check if top and bottom walls are only made of 1
 void	check_top_bottom_walls(char **map)
 {
 	int	i;
@@ -95,23 +90,18 @@ void	check_top_bottom_walls(char **map)
 
 	i = count_line(map);
 	j = 0;
-	puts("begin of check_top_bottom_walls\n");
 	while (map[0][j])
 	{
-		puts("test\n");
 		if (map[0][j] != '1')
-			printf("first line is not made of 1\n");
-		j++;
+			ft_putstr("Error\nTop wall : K.O\n");
+			j++;
 	}
 	j = 0;
-	puts("second boucle\n");
 	i -= 1;
 	while (map[i][j])
 	{
-		puts("test last\n");
 		if (map[i][j] != '1')
-			printf("last line is not made of 1\n");
+			printf("Error\nBottom wall : K.O\n");
 		j++;	
 	}
-	puts("end of check_top_bottom_walls\n");
 }
