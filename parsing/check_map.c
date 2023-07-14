@@ -6,7 +6,7 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 07:13:15 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 07:33:03 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,25 +33,13 @@ int	check_elem(char **map)
 	while (map[i])
 	{
 		j = 0;
-//		printf("J = %d\n", j);
 		while (map[i][j])
 		{
-//			printf("TEST map[i][j] = %c\n", map[i][j]);
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
 				&& map[i][j] != '1' && map[i][j] != '0')
-			{
-//				printf ("character is incorrect\n");
-				break ;
 				return (-1);
-			}
-		//	else
-		//	{
-//				printf("map[i] = %s\n", map[i]);
-//				printf("BOUCLE J = %d\n", j);
-				j++;
-		//	}
+			j++;
 		}
-		printf("map[i] = %s\n", map[i]);
 		i++;
 	}
 	return (0);
@@ -59,18 +47,15 @@ int	check_elem(char **map)
 
 void	find_nbr_of_elem(char **map)
 {
-	int	i;
-	int	j;
-	t_map check;
+	int		i;
+	int		j;
+	t_map	check;
 
 	i = 0;
 	check.p = 0;
 	check.e = 0;
 	check.c = 0;
-	printf("P = %d\n", check.p);
-	printf("E = %d\n", check.e);
-	printf("C = %d\n", check.c);
-	printf("---find_nbr_of_elements ---\n");
+	printf("--- find_nbr_of_elem ---\n");
 	while (map[i])
 	{
 		j = 0;
@@ -86,7 +71,5 @@ void	find_nbr_of_elem(char **map)
 		}
 		i++;
 	}
-	printf("P = %d\n", check.p);
-	printf("E = %d\n", check.e);
-	printf("C = %d\n", check.c);
+	puts("end of find_nbr_of_elem\n");
 }

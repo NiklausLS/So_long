@@ -6,31 +6,51 @@
 /*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 06:40:28 by nileempo         ###   ########.fr       */
+/*   Updated: 2023/07/14 08:10:51 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.c"
+#include "../so_long.h"
 
-//check if the mqp is a rectangle
-void	check_if_rectangle(char *file)
+//check if the map is a rectangle
+void	check_if_rectangle(char **map)
 {
-	int		x;
-	int		y;
+	int		i;
+	int		j;
+	int		next;
 
-	x = 0;
-	y = 0;
-	while (file[x])
-		x++;
-	
-
+	i = 0;
+	printf("--- check_if_rectangle ---\n");
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			j++;
+			if (i == 0) 
+				next = j;
+		}
+		if (next != j)
+		{
+			printf("size are not the same : %d and %d\n", j, next);
+			break ;
+		}
+		next = j;
+		printf("map[i] : i = %d | J = %d | NEXT = %d\n", i, j, next);
+		i++;
+	}
 }
 
 //check if horizontal walls are only made of 1
+/*void	check_walls(char *file)
+{
+	
 
-int	check_x_walls(
+}*/
 
+
+//int	check_x_walls
 
 //check if vertical walls are only made of 1
 
-int	check_y_walls(
+//int	check_y_walls

@@ -6,7 +6,7 @@
 #    By: nileempo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2023/07/13 12:35:22 by nileempo         ###   ########.fr        #
+#    Updated: 2023/07/14 08:10:04 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ SRCS = main.c \
 	./parsing/check_args.c \
 	./parsing/check_if_file.c \
 	./parsing/check_map.c \
+	./parsing/check_if_rectangle.c \
 	./parsing/check_all.c \
 	./printing/print_error.c \
 	./utils/ft_memset.c \
