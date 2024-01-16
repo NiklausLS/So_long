@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 13:20:40 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/13 21:58:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int		check_if_file(char *str);
 
 int		check_elem(char **map);
 int		find_nbr_of_elem(char **map);
+int		check_nbr_of_elem(t_map check);
 int		check_if_rectangle(char **map);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);

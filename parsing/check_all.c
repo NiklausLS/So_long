@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_all.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 13:17:35 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/16 13:16:25 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ void	check_all(int argc, char **argv)
 	check_elem(map);
 
 	find_nbr_of_elem(map);
-
 	check_if_rectangle(map);
-	
 	check_side_walls(map);
-
 	check_top_wall(map);
 	check_bottom_wall(map);
 
+	printf("elem.p = %d", elements->p);
+	printf("elem.e = %d", elements->e);
+	printf("elem.c = %d", elements->c);
 	puts("end of check_all\n");
 /*	system("leaks so_long");
 	free(map);*/

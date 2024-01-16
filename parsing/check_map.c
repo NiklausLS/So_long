@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 13:20:01 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/13 21:57:56 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	find_nbr_of_elem(char **map)
 	return (0);
 }
 
-static int	check_nbr_of_elem(t_map check)
+int	check_nbr_of_elem(t_map check)
 {
 	puts("begin of check_nbr_of_elem\n");
 	if (check.p != 1)
