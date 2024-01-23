@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ber.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:23:50 by nileempo         ###   ########.fr       */
+/*   Created: 2022/11/09 08:42:33 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/23 15:43:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+//#include <stdio.h>
+#include "../includes/libft.h"
 
-int	check_ber(char *str)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	char	*str;
 
-	i = 0;
-	while (str[i])
-		i++;
-	if (str[i - 4] != '.' || str[i - 3] != 'b' || str[i - 2] != 'e'
-		|| str[i - 1] != 'r')
+	str = s;
+	while (n)
 	{
-		ft_putstr("Error\n.ber K.O\n");
-		return (-1);
+		*str = (unsigned char)c;
+		str++;
+		n--;
 	}
-	return (0);
+	return (s);
 }
+
+/*int main ()
+{
+	char s[] = "test de la fonction";
+
+	printf("%s", ft_memset(s, 'a', 5));
+	return (0);	
+}*/

@@ -6,11 +6,11 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:04 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/13 22:02:04 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:23:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 //i check the numbers of arguments passed and send an error
 //if there are more or less than the executable

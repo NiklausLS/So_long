@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:59:51 by nileempo          #+#    #+#             */
-/*   Updated: 2023/04/04 11:22:04 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:02:11 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+size_t	ft_gnl_strlen(char *s)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(char *s)
 	return (i);
 }
 
-char	*ft_strjoin(char *memory, char *buf)
+char	*ft_gnl_strjoin(char *memory, char *buf)
 {
 	char	*dest;
 	int		i;
@@ -35,7 +35,7 @@ char	*ft_strjoin(char *memory, char *buf)
 		memory = (char *)malloc(sizeof(char) * 1);
 		memory[0] = '\0';
 	}
-	dest = malloc(sizeof(char) * (ft_strlen(memory) + (ft_strlen(buf) + 1)));
+	dest = malloc(sizeof(char) * (ft_gnl_strlen(memory) + (ft_gnl_strlen(buf) + 1)));
 	if (!dest)
 		return (NULL);
 	while (memory[++i])
@@ -47,7 +47,7 @@ char	*ft_strjoin(char *memory, char *buf)
 	return (dest);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_gnl_strchr(char *s, int c)
 {
 	int		i;
 	char	*ptr;
@@ -55,7 +55,7 @@ char	*ft_strchr(char *s, int c)
 	i = 0;
 	ptr = (char *)s;
 	if (c == '\0')
-		return (ptr + ft_strlen(s));
+		return (ptr + ft_gnl_strlen(s));
 	while (s[i])
 	{
 		if (s[i] == (char)c)

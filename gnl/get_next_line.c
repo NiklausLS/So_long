@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:58:37 by nileempo          #+#    #+#             */
-/*   Updated: 2023/04/04 13:07:01 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:01:46 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static char	*get_buf(int fd, char *memory)
 			return (NULL);
 		}
 		buf[rd] = '\0';
-		memory = ft_strjoin(memory, buf);
-		if (ft_strchr(buf, '\n'))
+		memory = ft_gnl_strjoin(memory, buf);
+		if (ft_gnl_strchr(buf, '\n'))
 			break ;
 	}
 	free(buf);
@@ -82,7 +82,7 @@ static char	*get_last(char *memory)
 		free(memory);
 		return (NULL);
 	}
-	last = (char *)malloc(sizeof(char) * (ft_strlen(memory) - i + 1));
+	last = (char *)malloc(sizeof(char) * (ft_gnl_strlen(memory) - i + 1));
 	if (!last)
 		return (NULL);
 	i++;

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:50 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 11:13:15 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:24:28 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 //ill send and error message depending of the number i get in param
 

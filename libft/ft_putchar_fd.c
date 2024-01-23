@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ber.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:23:50 by nileempo         ###   ########.fr       */
+/*   Created: 2022/11/16 15:44:27 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/23 15:44:03 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/libft.h"
 
-int	check_ber(char *str)
+void	ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	if (str[i - 4] != '.' || str[i - 3] != 'b' || str[i - 2] != 'e'
-		|| str[i - 1] != 'r')
-	{
-		ft_putstr("Error\n.ber K.O\n");
-		return (-1);
-	}
-	return (0);
+	write (fd, &c, 1);
 }
+
+/*int main()
+{
+	char c = 'a';
+	int fd = 1;
+
+	ft_putchar_fd(c, fd);
+	return (0);
+}*/

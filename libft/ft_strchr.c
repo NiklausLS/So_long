@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ber.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:23:50 by nileempo         ###   ########.fr       */
+/*   Created: 2024/01/22 18:42:31 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/23 15:44:16 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/libft.h"
 
-int	check_ber(char *str)
+char	*ft_strchr(char *s, int c)
 {
-	int	i;
+	int		i;
+	char	*ptr;
 
 	i = 0;
-	while (str[i])
-		i++;
-	if (str[i - 4] != '.' || str[i - 3] != 'b' || str[i - 2] != 'e'
-		|| str[i - 1] != 'r')
+	ptr = (char *)s;
+	if (c == '\0')
+		return (ptr + ft_strlen(s));
+	while (s[i])
 	{
-		ft_putstr("Error\n.ber K.O\n");
-		return (-1);
+		if (s[i] == (char)c)
+			return (ptr + i);
+		i++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 11:34:45 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/23 08:38:30 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "./includes/so_long.h"
 
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {

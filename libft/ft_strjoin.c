@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ber.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:23:50 by nileempo         ###   ########.fr       */
+/*   Created: 2024/01/22 19:03:50 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/23 15:44:28 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/libft.h"
 
-int	check_ber(char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	char	*dest;
+	char	*d;
 
-	i = 0;
-	while (str[i])
-		i++;
-	if (str[i - 4] != '.' || str[i - 3] != 'b' || str[i - 2] != 'e'
-		|| str[i - 1] != 'r')
-	{
-		ft_putstr("Error\n.ber K.O\n");
-		return (-1);
-	}
-	return (0);
+	if (!s1)
+		return (NULL);
+	dest = malloc(sizeof(char) * ft_strlen(s1) + (ft_strlen(s2) + 1));
+	if (!dest)
+		return (NULL);
+	d = dest;
+	while (*s1)
+		*dest++ = *s1++;
+	while (*s2)
+		*dest++ = *s2++;
+	*dest = '\0';
+	return (d);
 }

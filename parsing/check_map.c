@@ -6,11 +6,11 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/13 21:57:56 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:24:17 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 //i have to check if the map is OK
 

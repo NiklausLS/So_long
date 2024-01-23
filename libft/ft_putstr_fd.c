@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ber.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:23:50 by nileempo         ###   ########.fr       */
+/*   Created: 2022/11/16 15:49:38 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/23 15:44:07 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/libft.h"
 
-int	check_ber(char *str)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-		i++;
-	if (str[i - 4] != '.' || str[i - 3] != 'b' || str[i - 2] != 'e'
-		|| str[i - 1] != 'r')
+	while (s[i])
 	{
-		ft_putstr("Error\n.ber K.O\n");
-		return (-1);
+		write (fd, &s[i], 1);
+		i++;
 	}
-	return (0);
 }
+/*
+int main()
+{
+	char *s = "test de la fonction";
+	int fd = 1;
+
+	ft_putstr_fd(s, fd);
+	return (0);
+}*/

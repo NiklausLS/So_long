@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/13 11:22:29 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:26:21 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 //i want to check the position of my elements in the map
 //and fill it with the right images

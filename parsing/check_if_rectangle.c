@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_if_rectangle.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nileempo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2023/07/14 12:16:44 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/16 18:24:09 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../includes/so_long.h"
 
 //check if the map is a rectangle
 int	check_if_rectangle(char **map)
