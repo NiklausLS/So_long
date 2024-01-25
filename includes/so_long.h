@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 22:47:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 23:19:12 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,13 @@ int		check_ber(char *str);
 int		check_argc(int argc);
 int		check_if_file(char *str);
 int		check_elem(char **map);
-int		find_nbr_of_elem(char **map, t_elem *el);
-int		check_nbr_of_elem(t_elem *el);
+
+//void	find_nbr_of_elem(char **map, t_elem *el);
+void	check_collectible(char **map, t_elem *el);
+void	check_exit(char **map, t_elem *el);
+void	check_character(char **map, t_elem *el);
+void	check_nbr_of_elem(t_elem *el);
+
 int		check_if_rectangle(char **map);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);
