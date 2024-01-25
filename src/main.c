@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:27:19 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:07:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	check_all(argc, argv);
 	data.mlx_ptr = mlx_init();
+	check_all(argc, argv, data);
 	if (!data.mlx_ptr)
 	{
 		ft_putstr("Error : mlx_init\n");

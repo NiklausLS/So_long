@@ -6,22 +6,11 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:54:24 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:08:34 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-//i have to check if the map is OK
-
-//i need :
-//1 P
-//1 E
-//1 C
-//walls all around
-//0 for empty spaces 
-//
-//so the map can only contain P E C 1 0
 
 //check each element of the map to see if there is something else than PEC10
 int	check_elem(char **map)
@@ -48,11 +37,10 @@ int	check_elem(char **map)
 	return (0);
 }
 
-int	find_nbr_of_elem(char **map)
+int	find_nbr_of_elem(char **map, t_data	data)
 {
 	int		i;
 	int		j;
-	t_data	data;
 
 	i = 0;
 	data.p = 0;
@@ -94,9 +82,9 @@ int	check_nbr_of_elem(t_data data)
 		ft_putstr("Error\nCollectible : K.O\n");
 		exit (EXIT_FAILURE);
 	}
-	printf("check.p = %d\n", data.p);
+	/*printf("check.p = %d\n", data.p);
 	printf("check.e = %d\n", data.e);
 	printf("check.c = %d\n", data.c);
-	puts("end\n");
+	puts("end\n");*/
 	return (0);
 }

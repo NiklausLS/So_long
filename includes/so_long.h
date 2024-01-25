@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:54:35 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:07:09 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ int		check_argc(int argc);
 int		check_if_file(char *str);
 
 int		check_elem(char **map);
-int		find_nbr_of_elem(char **map);
-int		check_nbr_of_elem(t_data check);
+int		find_nbr_of_elem(char **map, t_data data);
+int		check_nbr_of_elem(t_data data);
 int		check_if_rectangle(char **map);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);
 int		check_bottom_wall(char **map);
 
-void	check_all(int argc, char **argv);
+void	check_all(int argc, char **argv, t_data data);
 
 //print errors in stdin
 void	print_error(int check);
