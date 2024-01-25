@@ -6,17 +6,11 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 13:50:41 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:59:07 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-//use all my checkings functions at once
-//check argc OK
-//check .BER OK
-//check if the file can be open
-//check if it is a file and not an repertory
 
 //to do
 //check if the map is valid
@@ -36,7 +30,7 @@ static char	**open_map(char *file)
 
 	fd = open(file, O_RDONLY);
 	if (fd == -1)
-		write (1, "OPEN ERROR\n", 11);
+		ft_putstr("Error\nOpen K.O\n");
 	line = "";
 	str = ft_calloc(1, 1);
 	while (line)
@@ -57,11 +51,11 @@ void	check_all(int argc, char **argv)
 {
 	char	*file;
 	char	**map;
-	t_map	*elements;
+	t_data	data;
 
 	file = argv[1];
 	map = NULL;
-	elements = malloc(sizeof(t_map));
+	//data = malloc(sizeof(t_data));
 	printf("check_argc\n");
 	check_argc(argc);
 	printf("check_ber\n");
@@ -73,14 +67,16 @@ void	check_all(int argc, char **argv)
 	check_elem(map);
 
 	find_nbr_of_elem(map);
-	check_if_rectangle(map);
-	check_side_walls(map);
-	check_top_wall(map);
-	check_bottom_wall(map);
+	
+	//check_if_rectangle(map);
+	//check_side_walls(map);
+	//check_top_wall(map);
+	//check_bottom_wall(map);
 
-	printf("elem.p = %d", elements->p);
-	printf("elem.e = %d", elements->e);
-	printf("elem.c = %d", elements->c);
+	printf("data.p = %d\n", data.p);
+	printf("data.e = %d\n", data.e);
+	printf("data.c = %d\n", data.c);
+
 	puts("end of check_all\n");
-	free(map);
+	//free(map);
 }

@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 17:57:58 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:27:19 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 	*(unsigned int*)dst = color;
 }*/
 
-int	main()
+int	main(int argc, char **argv)
 {
 	t_data	data;
 
-	//check_all(argc, argv);
+	check_all(argc, argv);
 	data.mlx_ptr = mlx_init();
 	if (!data.mlx_ptr)
 	{

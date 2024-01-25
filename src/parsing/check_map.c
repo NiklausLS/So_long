@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:24:17 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:54:24 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 //
 //so the map can only contain P E C 1 0
 
+//check each element of the map to see if there is something else than PEC10
 int	check_elem(char **map)
 {
 	int	i;
@@ -36,7 +37,10 @@ int	check_elem(char **map)
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
 				&& map[i][j] != '1' && map[i][j] != '0')
-				return (-1);
+			{
+				ft_putstr("Error\nElements check : K.O\n");
+				exit (EXIT_FAILURE);
+			}
 			j++;
 		}
 		i++;
@@ -48,52 +52,51 @@ int	find_nbr_of_elem(char **map)
 {
 	int		i;
 	int		j;
-	t_map	check;
+	t_data	data;
 
 	i = 0;
-	check.p = 0;
-	check.e = 0;
-	check.c = 0;
+	data.p = 0;
+	data.e = 0;
+	data.c = 0;
 	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 		{
 			if (map[i][j] == 'P')
-				check.p += 1;
+				data.p += 1;
 			if (map[i][j] == 'E')
-				check.e += 1;
+				data.e += 1;
 			if (map[i][j] == 'C')
-				check.c += 1;
+				data.c += 1;
 			j++;
 		}
 		i++;
 	}
-	check_nbr_of_elem(check);
+	check_nbr_of_elem(data);
 	return (0);
 }
 
-int	check_nbr_of_elem(t_map check)
+int	check_nbr_of_elem(t_data data)
 {
-	puts("begin of check_nbr_of_elem\n");
-	if (check.p != 1)
+	if (data.p != 1)
 	{
 		ft_putstr("Error\nStarting position : K.O\n");
-		return (-1);
+		exit (EXIT_FAILURE);
 	}
-	if (check.e != 1)
+	if (data.e != 1)
 	{
 		ft_putstr("Error\nExit : K.O\n");
-		return (-1);
+		exit (EXIT_FAILURE);
 	}
-	if (check.c < 1)
+	if (data.c < 1)
 	{
 		ft_putstr("Error\nCollectible : K.O\n");
-		return (-1);
+		exit (EXIT_FAILURE);
 	}
-	printf("check.p = %d\n", check.p);
-	printf("check.e = %d\n", check.e);
-	printf("check.c = %d\n", check.c);
+	printf("check.p = %d\n", data.p);
+	printf("check.e = %d\n", data.e);
+	printf("check.c = %d\n", data.c);
 	puts("end\n");
 	return (0);
 }

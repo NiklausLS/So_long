@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 17:45:08 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:54:35 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ typedef struct	s_data {
 	int		endian;
 	void	*ground;
 	void	*wall;
-
-}			t_data;
-//map structure
-typedef struct s_map {
 	int		p;
 	int		e;
 	int		c;
-}		t_map;
+}			t_data;
+//map structure
+
+
+
 
 int		main(int argc, char **argv);
 
@@ -49,7 +49,7 @@ int		check_if_file(char *str);
 
 int		check_elem(char **map);
 int		find_nbr_of_elem(char **map);
-int		check_nbr_of_elem(t_map check);
+int		check_nbr_of_elem(t_data check);
 int		check_if_rectangle(char **map);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);

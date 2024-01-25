@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:26 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/24 02:31:53 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:52:38 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_if_file(char *str)
 	if (fd != -1)
 	{
 		ft_putstr("Error\nNot a file\n");
-		return (-1);
+		exit (EXIT_FAILURE);
 	}
 	return (0);
 }

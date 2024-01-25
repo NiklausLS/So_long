@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:14 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:23:50 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:52:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_ber(char *str)
 		|| str[i - 1] != 'r')
 	{
 		ft_putstr("Error\n.ber K.O\n");
-		return (-1);
+		exit (EXIT_FAILURE);
 	}
 	return (0);
 }

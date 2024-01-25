@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/01/25 17:57:38 by nileempo         ###   ########.fr        #
+#    Updated: 2024/01/25 19:00:44 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS = ./src/main.c \
 	./src/parsing/check_if_rectangle.c \
 	./src/parsing/check_all.c \
 	./src/printing/print_error.c \
+	./src/textures/textures.c \
 
 OBJS = $(SRCS:.c=.o)
 
