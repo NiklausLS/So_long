@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:24:09 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 19:50:15 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	check_if_rectangle(char **map)
 		while (map[i][j])
 		{
 			j++;
-			if (i == 0) 
+			if (i == 0)
 				next = j;
 		}
 		if (next != j)
 		{
 			ft_putstr("Error\nRectangle : K.O\n");
-			return (-1);
+			exit (EXIT_FAILURE);
 		}
 		next = j;
 		i++;
@@ -56,7 +56,7 @@ int	check_side_walls(char **map)
 			if (map[i][0] != '1' || map[i][j - 1] != '1')
 			{
 				printf("Error\nSide wall : K.O\n");
-				return (-1);
+				exit (EXIT_FAILURE);
 			}
 		}
 		i++;
@@ -64,7 +64,25 @@ int	check_side_walls(char **map)
 	return (0);
 }
 
-//count the number of line to check the last line in the next function
+//check if top wall is only made of 1
+int	check_top_wall(char **map)
+{
+	int	i;
+
+	i = 0;
+	while (map[0][i])
+	{
+		if (map[0][i] != '1')
+		{
+			ft_putstr("Error\nTop wall : K.O\n");
+			exit (EXIT_FAILURE);
+		}
+		i++;
+	}
+	return (0);
+}
+
+//count the number of line to check the bottom wall
 static int	count_line(char **map)
 {
 	int	i;
@@ -81,37 +99,20 @@ static int	count_line(char **map)
 	return (i);
 }
 
-//check if top and bottom walls are only made of 1
-int	check_top_wall(char **map)
-{
-	int	j;
-
-	j = 0;
-	while (map[0][j])
-	{
-		if (map[0][j] != '1')
-		{
-			ft_putstr("Error\nTop wall : K.O\n");
-			return (-1);
-		}
-		j++;
-	}
-	return (0);
-}
-
+//check if the bottom wall is only made of 1
 int	check_bottom_wall(char **map)
 {
 	int	i;
 	int	j;
 
-	i = count_line(map);
+	i = count_line(map) - 1;
 	j = 0;
 	while (map[i][j])
 	{
 		if (map[i][j] != '1')
 		{
 			printf("Error\nBottom wall : K.O\n");
-			return (-1);
+			exit (EXIT_FAILURE);
 		}
 		j++;
 	}

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   free_structures.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 21:48:56 by nileempo         ###   ########.fr       */
+/*   Created: 2024/01/25 22:09:43 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/25 22:24:03 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//i want to check the position of my elements in the map
-//and fill it with the right images
-
-//1-Opening the map
-//2-Checking the position of the elements
-
-void	init_map(char *file)
+void    free_data(t_data *data)
 {
-	int	fd;
-
-	fd = open(file, O_RDONLY);
-	printf("fd = %d\n", fd);
-	if (fd == -1)
-		printf("FD ERROR\n");
-	
-
+    mlx_destroy_window(data->mlx_ptr, data->window);
+    mlx_destroy_image(data->mlx_ptr, data->img);
+	free(data->mlx_ptr);
+	free(data->ground);
+	free(data->wall);
 }
-/*
-void	init_struct()*/
+
+
+/*void    free_elements(t_elements *nbr)
+{
+    free(nbr->p);
+    free(nbr->e);
+    free(nbr->c);
+}*/

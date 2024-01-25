@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 19:07:09 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 22:30:29 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,36 +26,43 @@ typedef struct	s_data {
 	void	*mlx_ptr;
 	void	*window;
 	void	*img;
-	void	*addr;
-	int		bits_per_pixel;
-	int		line_lenght;
-	int		endian;
 	void	*ground;
 	void	*wall;
+}			t_data;
+
+typedef struct s_elements {
 	int		p;
 	int		e;
 	int		c;
-}			t_data;
+
+	int		p_index;
+	int		e_index;
+	int		c_index;
+}			t_elements;
+
 //map structure
 
-
-
-
 int		main(int argc, char **argv);
+
+//initialise my structures
+void	init_structures(t_data *data, t_elements *nbr);
+
+//free my structures
+void	free_data(t_data *data);
+//void	free_elements(t_elements *nbr);
 
 int		check_ber(char *str);
 int		check_argc(int argc);
 int		check_if_file(char *str);
-
 int		check_elem(char **map);
-int		find_nbr_of_elem(char **map, t_data data);
-int		check_nbr_of_elem(t_data data);
+int		find_nbr_of_elem(char **map, t_elements *nbr);
+int		check_nbr_of_elem(t_elements *nbr);
 int		check_if_rectangle(char **map);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);
 int		check_bottom_wall(char **map);
 
-void	check_all(int argc, char **argv, t_data data);
+void	check_all(int argc, char **argv, t_elements nbr);
 
 //print errors in stdin
 void	print_error(int check);

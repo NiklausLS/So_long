@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 19:08:34 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 22:01:50 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,54 +37,49 @@ int	check_elem(char **map)
 	return (0);
 }
 
-int	find_nbr_of_elem(char **map, t_data	data)
+int	find_nbr_of_elem(char **map, t_elements *nbr)
 {
 	int		i;
 	int		j;
 
 	i = 0;
-	data.p = 0;
-	data.e = 0;
-	data.c = 0;
+	printf("p = %d e = %d c = %d\n", nbr->p, nbr->e, nbr->c);
 	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
 		{
 			if (map[i][j] == 'P')
-				data.p += 1;
+				nbr->p += 1;
 			if (map[i][j] == 'E')
-				data.e += 1;
+				nbr->e += 1;
 			if (map[i][j] == 'C')
-				data.c += 1;
+				nbr->c += 1;
 			j++;
 		}
 		i++;
 	}
-	check_nbr_of_elem(data);
+	check_nbr_of_elem(nbr);
+	printf("p = %d e = %d c = %d\n", nbr->p, nbr->e, nbr->c);
 	return (0);
 }
 
-int	check_nbr_of_elem(t_data data)
+int	check_nbr_of_elem(t_elements *nbr)
 {
-	if (data.p != 1)
+	if (nbr->p != 1)
 	{
 		ft_putstr("Error\nStarting position : K.O\n");
 		exit (EXIT_FAILURE);
 	}
-	if (data.e != 1)
+	if (nbr->e != 1)
 	{
 		ft_putstr("Error\nExit : K.O\n");
 		exit (EXIT_FAILURE);
 	}
-	if (data.c < 1)
+	if (nbr->c != 1)
 	{
 		ft_putstr("Error\nCollectible : K.O\n");
 		exit (EXIT_FAILURE);
 	}
-	/*printf("check.p = %d\n", data.p);
-	printf("check.e = %d\n", data.e);
-	printf("check.c = %d\n", data.c);
-	puts("end\n");*/
 	return (0);
 }

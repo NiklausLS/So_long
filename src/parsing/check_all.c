@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 19:06:55 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 22:30:55 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	**open_map(char *file)
 	return (map);
 }
 
-void	check_all(int argc, char **argv, t_data data)
+void	check_all(int argc, char **argv, t_elements nbr)
 {
 	char	*file;
 	char	**map;
@@ -65,14 +65,17 @@ void	check_all(int argc, char **argv, t_data data)
 	map = open_map(file);
 	printf("check_elem\n");
 	check_elem(map);
-
-	find_nbr_of_elem(map, data);
+	printf("find_nbr_of_elem\n");
+	find_nbr_of_elem(map, &nbr);
+	printf("check_if_rectangle\n");
+	check_if_rectangle(map);
+	printf("check_side_walls\n");
+	check_side_walls(map);
+	printf("check_top_wall\n");
+	check_top_wall(map);
+	printf("check_bottom_wall\n");
+	check_bottom_wall(map);
 	
-	//check_if_rectangle(map);
-	//check_side_walls(map);
-	//check_top_wall(map);
-	//check_bottom_wall(map);
-
 	puts("end of check_all\n");
 	//free(map);
 }
