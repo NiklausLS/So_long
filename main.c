@@ -6,38 +6,49 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/23 08:38:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:48:44 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./includes/so_long.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+/*void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
 
 	dst = data->addr + (y * data->line_lenght + x * (data->bits_per_pixel / 8));
 	*(unsigned int*)dst = color;
-}
+}*/
 
-int	main(int argc, char **argv)
+int	main()
 {
-	void	*mlx;
-	void	*window;
-	t_data	img;
+	t_data	data;
 
-	check_all(argc, argv);
+	//check_all(argc, argv);
+	data.mlx_ptr = mlx_init();
+	if (!data.mlx_ptr)
+	{
+		ft_putstr("Error : mlx_init\n");
+		exit (EXIT_FAILURE);
+	}
+	data.window = mlx_new_window(data.mlx_ptr, 900, 600, "so_long");
+	if (!data.window)
+	{
+		ft_putstr("Error : mlx_new_window\n");
+		free(data.mlx_ptr);
+		exit (EXIT_FAILURE);
+	}
+	
+	//data.img = mlx_new_image(data.mlx_ptr, 900, 600);
+	//data.addr = mlx_get_data_addr(data.img, &img.bits_per_pixel, 
+	//			&img.line_lenght, &img.endian);
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 900, 600, "so_long");
+	//mlx_pixel_put(data.mlx, data.window, 1, 1, 0x0000FF);	
+	//mlx_put_image_to_window(data.mlx, data.window, img.img, 0, 0);
 
-	img.img = mlx_new_image(mlx, 900, 600);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, 
-				&img.line_lenght, &img.endian);
-
-	my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
-		
-	mlx_put_image_to_window(mlx, window, img.img, 5, 5);
-	mlx_loop(mlx);
+	int x;
+	int y;
+	data.ground = mlx_xpm_file_to_image(data.mlx_ptr, "images/ground.xmp", &x, &y);
+	mlx_loop(data.mlx_ptr);
 	return (0);
 }

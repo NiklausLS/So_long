@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/01/23 15:30:04 by nileempo         ###   ########.fr        #
+#    Updated: 2024/01/25 13:50:24 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,30 +38,31 @@ MLX_PATH = ./mlx/mlxos/
 
 NAME = so_long
 RM = rm -f
-OS_NAME = $(shell uname -s)
+#OS_NAME = $(shell uname -s)
 
 # Compilation rules
 CC = clang
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -Imlx/mlxos
 MLX_FLAGS = -framework OpenGL -framework AppKit
 
-ifeq ($(OS_NAME), Darwin)
-	CFLAGS += -Imlx/mlxos
-	MLX_PATH = ./mlx/mlxos
+#ifeq ($(OS_NAME), Darwin)
+##	MLX_PATH = ./mlx/mlxos
 
-endif
+#endif
 
-ifeq ($(OS_NAME), Linux)
-	CFLAGS += -Imlx/Linux
-	MLX_PATH = ./mlx/Linux
+#ifeq ($(OS_NAME), Linux)
+#	CFLAGS += -Imlx/linux
+#	MLX_PATH = ./mlx/linux
 
-endif
+#endif
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(MLX_PATH) -I$(INC_PATH) -c $< -o $@
 	@echo "$(GREEN)--- Making objets files : $(YELLOW)$@ $(GREEN)---$(RESET)"
 
-$(NAME): lib_libft lib_mlx $(OBJS)
+$(NAME): $(OBJS)
+	make -C $(LIBFT_PATH)
+	make -C $(MLX_PATH)
 	@echo "$(GREEN)--- Making the executable : $(YELLOW)$(NAME) $(GREEN)---$(RESET)"
 	$(CC) $(CFLAGS) -Lmlx/mlxos -lmlx $(MLX_FLAGS) $(LIBFT_PATH)/libft.a $(OBJS) -o $(NAME)
 

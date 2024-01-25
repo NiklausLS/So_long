@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/23 16:00:58 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:45:08 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,25 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <stdlib.h>
 
 # include "../gnl/get_next_line.h"
 # include "../mlx/mlxos/mlx.h"
 # include "../libft/includes/libft.h"
 
 typedef struct	s_data {
+	void	*mlx_ptr;
+	void	*window;
 	void	*img;
 	void	*addr;
 	int		bits_per_pixel;
 	int		line_lenght;
 	int		endian;
-}			t_data;
-
-typedef	struct	s_img {
 	void	*ground;
 	void	*wall;
-}		t_img;
 
+}			t_data;
+//map structure
 typedef struct s_map {
 	int		p;
 	int		e;

@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:26:21 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:48:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	init_map(char *file)
 		printf("FD ERROR\n");
 	
 
-
-
-	}
-
 }
+/*
+void	init_struct()*/

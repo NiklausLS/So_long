@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/16 18:23:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:50:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@
 //check if the side characters are only made of 1 OK
 //check if there is a correct path
 
-//i open a file
-//read it
-//join and split every part
+//i open a file, read it, join and split every part
 //and return a tab of string
 static char	**open_map(char *file)
 {
@@ -64,9 +62,13 @@ void	check_all(int argc, char **argv)
 	file = argv[1];
 	map = NULL;
 	elements = malloc(sizeof(t_map));
+	printf("check_argc\n");
 	check_argc(argc);
+	printf("check_ber\n");
 	check_ber(argv[1]);
+	printf("check_if_file\n");
 	check_if_file(file);
+
 	map = open_map(file);
 	check_elem(map);
 
@@ -80,6 +82,5 @@ void	check_all(int argc, char **argv)
 	printf("elem.e = %d", elements->e);
 	printf("elem.c = %d", elements->c);
 	puts("end of check_all\n");
-/*	system("leaks so_long");
-	free(map);*/
+	free(map);
 }
