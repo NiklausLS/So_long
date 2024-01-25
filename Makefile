@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/01/25 13:50:24 by nileempo         ###   ########.fr        #
+#    Updated: 2024/01/25 17:57:38 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,16 +18,16 @@ BLUE = \033[34m
 YELLOW = \033[33m
 
 # Source files
-SRCS = main.c \
+SRCS = ./src/main.c \
 	./gnl/get_next_line.c \
 	./gnl/get_next_line_utils.c \
-	./parsing/check_ber.c \
-	./parsing/check_args.c \
-	./parsing/check_if_file.c \
-	./parsing/check_map.c \
-	./parsing/check_if_rectangle.c \
-	./parsing/check_all.c \
-	./printing/print_error.c \
+	./src/parsing/check_ber.c \
+	./src/parsing/check_args.c \
+	./src/parsing/check_if_file.c \
+	./src/parsing/check_map.c \
+	./src/parsing/check_if_rectangle.c \
+	./src/parsing/check_all.c \
+	./src/printing/print_error.c \
 
 OBJS = $(SRCS:.c=.o)
 
