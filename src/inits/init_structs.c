@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialisation.c                                   :+:      :+:    :+:   */
+/*   init_structs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/25 21:47:16 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 22:45:30 by nileempo         ###   ########.fr       */
+/*   Created: 2024/01/27 01:03:32 by nileempo          #+#    #+#             */
+/*   Updated: 2024/02/01 15:50:52 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//initilisation of my structure who counts importants elements
-
-//void    init_structures(t_data data, t_elements *nbr)
-
+//initilisation of my structure my window elements
 static void    init_struct_data(t_data *data)
 {
     data->mlx_ptr = NULL;
-	data->window = NULL;
+	data->win_ptr = NULL;
     data->img = NULL;
 	data->ground = NULL;
 	data->wall = NULL;
 }
 
+//initialisation of my tokens
 static void	init_struct_elements(t_elem *el)
 {
 	el->p = 0;
@@ -35,11 +33,13 @@ static void	init_struct_elements(t_elem *el)
 	el->e_row = -1;
 	el->e_col = -1;
 	el->c_row = -1;
-	el->c_row = -1;
+	el->c_col = -1;
 }
 
+//initialisation of all my structures
 void	init_structures(t_data *data, t_elem *el)
 {
 	init_struct_data(data);
 	init_struct_elements(el);
+	init_textures(data);
 }

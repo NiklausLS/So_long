@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:09:43 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 22:24:03 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/01/27 01:08:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void    free_data(t_data *data)
 {
-    mlx_destroy_window(data->mlx_ptr, data->window);
+    mlx_destroy_window(data->mlx_ptr, data->win_ptr);
     mlx_destroy_image(data->mlx_ptr, data->img);
 	free(data->mlx_ptr);
 	free(data->ground);

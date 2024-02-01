@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check_elements.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 14:10:11 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 23:17:33 by nileempo         ###   ########.fr       */
+/*   Created: 2024/01/31 09:06:51 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/31 09:42:21 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_elem(char **map)
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
 				&& map[i][j] != '1' && map[i][j] != '0')
 			{
-				ft_putstr("Error\nElements check : K.O\n");
+				ft_putstr_fd("Error\nElements check : K.O\n", 2);
 				exit (EXIT_FAILURE);
 			}
 			j++;
@@ -109,49 +109,22 @@ void	check_character(char **map, t_elem *el)
 	}
 }
 
-/*
-int	find_nbr_of_elem(char **map, t_elem *el)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	printf("p = %d e = %d c = %d\n", el->p, el->e, el->c);
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == 'P')
-				el->p += 1;
-			if (map[i][j] == 'E')
-				el->e += 1;
-			if (map[i][j] == 'C')
-				el->c += 1;
-			j++;
-		}
-		i++;
-	}
-	check_nbr_of_elem(el);
-	printf("p = %d e = %d c = %d\n", el->p, el->e, el->c);
-	return (0);
-}*/
-
+//check if there are enough elements on the map
 void	check_nbr_of_elem(t_elem *el)
 {
 	if (el->p != 1)
 	{
-		ft_putstr("Error\nStarting position : K.O\n");
+		ft_putstr_fd("Error\nStarting position : K.O\n", 2);
 		exit (EXIT_FAILURE);
 	}
 	else if (el->e != 1)
 	{
-		ft_putstr("Error\nExit : K.O\n");
+		ft_putstr_fd("Error\nExit : K.O\n", 2);
 		exit (EXIT_FAILURE);
 	}
 	else if (el->c != 1)
 	{
-		ft_putstr("Error\nCollectible : K.O\n");
+		ft_putstr_fd("Error\nCollectible : K.O\n", 2);
 		exit (EXIT_FAILURE);
 	}
 }

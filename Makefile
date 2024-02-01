@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/01/25 22:38:04 by nileempo         ###   ########.fr        #
+#    Updated: 2024/01/31 09:43:26 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,15 @@ YELLOW = \033[33m
 SRCS = ./src/main.c \
 	./gnl/get_next_line.c \
 	./gnl/get_next_line_utils.c \
-	./src/initialisation.c \
-	./src/free_structures.c \
-	./src/parsing/check_ber.c \
+	./src/inits/init_structs.c \
+	./src/inits/init_map.c \
+	./src//freeing/free_structures.c \
 	./src/parsing/check_args.c \
-	./src/parsing/check_if_file.c \
-	./src/parsing/check_map.c \
-	./src/parsing/check_if_rectangle.c \
+	./src/parsing/check_elements.c \
+	./src/parsing/check_walls.c \
 	./src/parsing/check_path.c \
 	./src/parsing/check_all.c \
+	./src/parsing/check_size.c \
 	./src/printing/print_error.c \
 	./src/textures/textures.c \
 

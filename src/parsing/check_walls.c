@@ -1,44 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_if_rectangle.c                               :+:      :+:    :+:   */
+/*   check_walls.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 11:36:56 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 19:50:15 by nileempo         ###   ########.fr       */
+/*   Created: 2024/01/31 09:35:53 by nileempo          #+#    #+#             */
+/*   Updated: 2024/01/31 09:43:07 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-//check if the map is a rectangle
-int	check_if_rectangle(char **map)
-{
-	int	i;
-	int	j;
-	int	next;
-
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			j++;
-			if (i == 0)
-				next = j;
-		}
-		if (next != j)
-		{
-			ft_putstr("Error\nRectangle : K.O\n");
-			exit (EXIT_FAILURE);
-		}
-		next = j;
-		i++;
-	}
-	return (0);
-}
 
 //check if horizontal walls are only made of 1
 int	check_side_walls(char **map)
@@ -55,7 +27,7 @@ int	check_side_walls(char **map)
 			j = ft_strlen(map[i]);
 			if (map[i][0] != '1' || map[i][j - 1] != '1')
 			{
-				printf("Error\nSide wall : K.O\n");
+				ft_putstr_fd("Error\nMAP: side wall is wrong\n", 2);
 				exit (EXIT_FAILURE);
 			}
 		}
@@ -74,7 +46,7 @@ int	check_top_wall(char **map)
 	{
 		if (map[0][i] != '1')
 		{
-			ft_putstr("Error\nTop wall : K.O\n");
+			ft_putstr_fd("Error\nMAP: top wall is wrong\n", 2);
 			exit (EXIT_FAILURE);
 		}
 		i++;
@@ -111,7 +83,7 @@ int	check_bottom_wall(char **map)
 	{
 		if (map[i][j] != '1')
 		{
-			printf("Error\nBottom wall : K.O\n");
+			ft_putstr_fd("Error\nMAP: bottom wall is wrong\n", 2);
 			exit (EXIT_FAILURE);
 		}
 		j++;

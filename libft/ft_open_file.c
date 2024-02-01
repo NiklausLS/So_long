@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   ft_open_file.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 21:48:56 by nileempo         ###   ########.fr       */
+/*   Created: 2024/02/01 14:36:29 by nileempo          #+#    #+#             */
+/*   Updated: 2024/02/01 14:42:42 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/so_long.h"
+#include "../includes/libft.h"
 
-//i want to check the position of my elements in the map
-//and fill it with the right images
-
-//1-Opening the map
-//2-Checking the position of the elements
-
-void	init_map(char *file)
+//take the file name as parameter and return fd
+int ft_open_file(char *file)
 {
-	int	fd;
+    int fd;
 
-	fd = open(file, O_RDONLY);
-	printf("fd = %d\n", fd);
-	if (fd == -1)
-		printf("FD ERROR\n");
-	
-
+    fd = open(file, O_RDONLY);
+    if (fd == -1)
+    {
+        perror("Error\nOpen file failed");
+        exit(EXIT_FAILURE);
+    }
+    return (fd);
 }
-/*
-void	init_struct()*/

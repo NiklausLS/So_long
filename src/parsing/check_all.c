@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 23:16:44 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:02:16 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,42 +25,38 @@ static char	**open_map(char *file)
 {
 	int		fd;
 	char	*line;
-	char	*str;
+	char	*tmp;
 	char	**map;
 
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
-		ft_putstr("Error\nOpen K.O\n");
-	line = "";
-	str = ft_calloc(1, 1);
-	while (line)
+	fd = ft_open_file(file);
+	line = NULL;
+	tmp = ft_calloc(1, 1);
+	while ((line = get_next_line(fd)) != NULL)
 	{
-		line = get_next_line(fd);
-		if (line == NULL)
-			break ;
-		str = ft_strjoin(str, line);
+		tmp = ft_strjoin(tmp, line);
 		free(line);
 	}
 	close(fd);
-	map = ft_split(str, '\n');
-	free(str);
+	map = ft_split(tmp, '\n');
+	free(tmp);
+	
+	int i = 0;
+	while (map[i])
+	{
+		printf("%s ", map[i]);
+		i++;
+	}
 	return (map);
 }
 
-void	check_all(int argc, char **argv, t_elem el)
+//call all my test and return a map if they all pass
+char	**check_all(int argc, char **argv, t_elem el)
 {
 	char	*file;
 	char	**map;
 
 	file = argv[1];
-	map = NULL;
-	//data = malloc(sizeof(t_data));
-	printf("check_argc\n");
 	check_argc(argc);
-	printf("check_ber\n");
-	check_ber(argv[1]);
-	printf("check_if_file\n");
-	check_if_file(file);
 	printf("open_map\n");
 	map = open_map(file);
 	printf("check_elem\n");
@@ -69,15 +65,12 @@ void	check_all(int argc, char **argv, t_elem el)
 	check_exit(map, &el);
 	check_character(map, &el);
 	check_nbr_of_elem(&el);
-	printf("check_if_rectangle\n");
-	check_if_rectangle(map);
 	printf("check_side_walls\n");
 	check_side_walls(map);
 	printf("check_top_wall\n");
 	check_top_wall(map);
 	printf("check_bottom_wall\n");
 	check_bottom_wall(map);
-	
-	puts("end of check_all\n");
-	//free(map);
+	//check_size(map, &el);
+	return (map);
 }

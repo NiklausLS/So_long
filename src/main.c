@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/25 22:46:17 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 16:07:31 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,33 +24,27 @@ int	main(int argc, char **argv)
 {
 	t_data data;
 	t_elem	el;
+	char	**map;
 
 	init_structures(&data, &el);
-	check_all(argc, argv, el);
+	map = check_all(argc, argv, el);
 	data.mlx_ptr = mlx_init();
 	if (!data.mlx_ptr)
 	{
 		ft_putstr("Error : mlx_init\n");
 		exit (EXIT_FAILURE);
 	}
-	data.window = mlx_new_window(data.mlx_ptr, 900, 600, "so_long");
-	if (!data.window)
+	data.win_ptr = mlx_new_window(data.mlx_ptr, WIDTH, HEIGHT, "so_long");
+	if (!data.win_ptr)
 	{
 		ft_putstr("Error : mlx_new_window\n");
 		free(data.mlx_ptr);
 		exit (EXIT_FAILURE);
 	}
-	
-	//data.img = mlx_new_image(data.mlx_ptr, 900, 600);
-	//data.addr = mlx_get_data_addr(data.img, &img.bits_per_pixel, 
-	//			&img.line_lenght, &img.endian);
 
-	//mlx_pixel_put(data.mlx, data.window, 1, 1, 0x0000FF);	
-	//mlx_put_image_to_window(data.mlx, data.window, img.img, 0, 0);
-
-	int x;
-	int y;
-	data.ground = mlx_xpm_file_to_image(data.mlx_ptr, "images/ground.xmp", &x, &y);
+	make_map(&data, map);
+	//mlx_put_image_to_window(data.mlx_ptr, data.win_ptr, data.img, 0, 0);
+	//make_map(&data, map);
 	mlx_loop(data.mlx_ptr);
 	return (0);
 }
