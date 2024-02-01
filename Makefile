@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/01/31 09:43:26 by nileempo         ###   ########.fr        #
+#    Updated: 2024/02/01 17:27:08 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ RM = rm -f
 
 # Compilation rules
 CC = clang
-CFLAGS = -Wall -Werror -Wextra -Imlx/mlxos
+CFLAGS = -Wall -Werror -Wextra -Imlx/mlxos -fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 
 #ifeq ($(OS_NAME), Darwin)

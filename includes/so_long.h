@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 16:03:36 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:37:35 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct	s_data {
 }			t_data;
 
 typedef struct s_elements {
-	int		rows;
-	int		cols;
+	//int		rows;
+	//int		cols;
 	int		p;
 	int		e;
 	int		c;
@@ -76,8 +76,8 @@ void	check_nbr_of_elem(t_elem *el);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);
 int		check_bottom_wall(char **map);
-int		check_size(char *file, t_elem *el);
-char	**check_all(int argc, char **argv, t_elem el);
+int		check_size(char **map, t_data *data);
+char	**check_all(int argc, char **argv, t_elem *el, t_data *data);
 
 //open file
 //char	**init_map(char *file, t_elem *el);

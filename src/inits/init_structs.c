@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 01:03:32 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 15:50:52 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:40:44 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,4 @@ void	init_structures(t_data *data, t_elem *el)
 {
 	init_struct_data(data);
 	init_struct_elements(el);
-	init_textures(data);
 }

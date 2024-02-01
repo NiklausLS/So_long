@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 16:02:16 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:58:53 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static char	**open_map(char *file)
 		free(line);
 	}
 	close(fd);
+	tmp = ft_strjoin(tmp, "\0");
 	map = ft_split(tmp, '\n');
 	free(tmp);
 	
@@ -50,7 +51,7 @@ static char	**open_map(char *file)
 }
 
 //call all my test and return a map if they all pass
-char	**check_all(int argc, char **argv, t_elem el)
+char	**check_all(int argc, char **argv, t_elem *el, t_data *data)
 {
 	char	*file;
 	char	**map;
@@ -61,16 +62,16 @@ char	**check_all(int argc, char **argv, t_elem el)
 	map = open_map(file);
 	printf("check_elem\n");
 	check_elem(map);
-	check_collectible(map, &el);
-	check_exit(map, &el);
-	check_character(map, &el);
-	check_nbr_of_elem(&el);
+	check_collectible(map, el);
+	check_exit(map, el);
+	check_character(map, el);
+	check_nbr_of_elem(el);
 	printf("check_side_walls\n");
 	check_side_walls(map);
 	printf("check_top_wall\n");
 	check_top_wall(map);
 	printf("check_bottom_wall\n");
 	check_bottom_wall(map);
-	//check_size(map, &el);
+	check_size(map, data);
 	return (map);
 }
