@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 18:37:35 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 23:53:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ typedef struct	s_data {
 	void	*img;
 	void	*ground;
 	void	*wall;
+	void	*collectible;
+	void	*player;
+	void	*exit;
 	int		width;
 	int		height;
 }			t_data;
@@ -59,7 +62,8 @@ void	init_textures(t_data *data);
 void	init_structures(t_data *data, t_elem *el);
 
 //free my structures
-void	free_data(t_data *data);
+void    free_textures(t_data *data);
+int		close_game(t_data *data);
 //void	free_elements(t_elements *nbr);
 
 //basic error checks

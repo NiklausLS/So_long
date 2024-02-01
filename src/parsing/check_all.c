@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 18:58:53 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 23:15:30 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,8 @@ static char	**open_map(char *file)
 		free(line);
 	}
 	close(fd);
-	tmp = ft_strjoin(tmp, "\0");
 	map = ft_split(tmp, '\n');
 	free(tmp);
-	
-	int i = 0;
-	while (map[i])
-	{
-		printf("%s ", map[i]);
-		i++;
-	}
 	return (map);
 }
 

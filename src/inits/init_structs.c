@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 01:03:32 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 18:40:44 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:53:37 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ static void    init_struct_data(t_data *data)
     data->img = NULL;
 	data->ground = NULL;
 	data->wall = NULL;
+	data->collectible = NULL;
+	data->exit = NULL;
+	data->player = NULL;
 }
 
 //initialisation of my tokens
