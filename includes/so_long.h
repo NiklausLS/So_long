@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 18:49:22 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:16:37 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define WIDTH 900
 # define HEIGHT 600
 # define TILE_SIZE 32
+# define ESC_KEY 53
 
 typedef struct	s_data {
 	void	*mlx_ptr;
@@ -89,6 +90,7 @@ char	**check_map(int argc, char **argv, t_elem *el, t_data *data);
 
 void    make_map(t_data *data, char **map);
 //event
+int key_hook(int key, t_data *data);
 
 //close the game
 int	close_game(t_data *data);

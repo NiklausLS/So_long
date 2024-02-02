@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 18:49:28 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 19:18:33 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 	init_textures(&data);
 	data.img = mlx_new_image(data.mlx_ptr, data.height * TILE_SIZE, data.width * TILE_SIZE);
 	make_map(&data, map);
+	mlx_hook(data.win_ptr, 2, 0, key_hook, &data);
 	mlx_hook(data.win_ptr, 17, 1L << 17, close_game, &data);
 	mlx_loop(data.mlx_ptr);
 	return (0);

@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_game.c                                       :+:      :+:    :+:   */
+/*   key_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 00:20:58 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 19:04:29 by nileempo         ###   ########.fr       */
+/*   Created: 2024/02/02 18:58:02 by nileempo          #+#    #+#             */
+/*   Updated: 2024/02/02 19:16:45 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//free my textures, destroy mlx and win ptr and return succes
-int close_game(t_data *data)
+//manage all the key i need to play
+int key_hook(int key, t_data *data)
 {
-    free_textures(data);
-    mlx_destroy_window(data->mlx_ptr, data->win_ptr);
-    mlx_destroy_image(data->mlx_ptr, data->img);
-    exit(EXIT_SUCCESS);
+    if (key == ESC_KEY)
+        close_game(data);
+    return (0);
 }
