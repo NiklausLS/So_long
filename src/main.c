@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 10:12:29 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:42:49 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 	char	**map;
 
 	init_structures(&data, &el);
-	map = check_all(argc, argv, &el, &data);
+	map = check_map(argc, argv, &el, &data);
 	/*
 	int i = 0;
 	int j = 0;

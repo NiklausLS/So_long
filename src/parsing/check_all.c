@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 23:15:30 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:42:35 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,22 @@ static char	**open_map(char *file)
 }
 
 //call all my test and return a map if they all pass
-char	**check_all(int argc, char **argv, t_elem *el, t_data *data)
+char	**check_map(int argc, char **argv, t_elem *el, t_data *data)
 {
 	char	*file;
 	char	**map;
 
 	file = argv[1];
 	check_argc(argc);
-	printf("open_map\n");
 	map = open_map(file);
-	printf("check_elem\n");
+	check_form(map);
 	check_elem(map);
 	check_collectible(map, el);
 	check_exit(map, el);
 	check_character(map, el);
 	check_nbr_of_elem(el);
-	printf("check_side_walls\n");
 	check_side_walls(map);
-	printf("check_top_wall\n");
 	check_top_wall(map);
-	printf("check_bottom_wall\n");
 	check_bottom_wall(map);
 	check_size(map, data);
 	return (map);

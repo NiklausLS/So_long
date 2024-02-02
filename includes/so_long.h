@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 10:11:34 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:42:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ int		check_side_walls(char **map);
 int		check_top_wall(char **map);
 int		check_bottom_wall(char **map);
 int		check_size(char **map, t_data *data);
-char	**check_all(int argc, char **argv, t_elem *el, t_data *data);
+int		check_form(char **map);
+char	**check_map(int argc, char **argv, t_elem *el, t_data *data);
 
 //open file
 //char	**init_map(char *file, t_elem *el);
