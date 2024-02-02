@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 18:42:26 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:49:22 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void    make_map(t_data *data, char **map);
 //event
 
 //close the game
-
+int	close_game(t_data *data);
 //to test my project
 //void	print_map(char **map, t_elem *el);
 #endif

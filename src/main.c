@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 18:42:49 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:49:28 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,6 @@ int	main(int argc, char **argv)
 
 	init_structures(&data, &el);
 	map = check_map(argc, argv, &el, &data);
-	/*
-	int i = 0;
-	int j = 0;
-	while(map[j][i])
-	{
-		j = 0;
-		while(map[j][i])
-		{
-			printf("%c", map[j][i]);
-			i++;
-		}
-		j++;
-	}*/
 	data.mlx_ptr = mlx_init();
 	if (!data.mlx_ptr)
 		ft_errorexit("Error : mlx_init\n");
