@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:06:51 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 18:55:47 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:09:03 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ int	check_elem(char **map)
 		{
 			if (map[i][j] != 'P' && map[i][j] != 'E' && map[i][j] != 'C'
 				&& map[i][j] != '1' && map[i][j] != '0')
-			{
-				ft_putstr_fd("Error\nElements check : K.O\n", 2);
-				exit (EXIT_FAILURE);
-			}
+				ft_errorexit("Error\nElements check : K.O\n");
 			j++;
 		}
 		i++;
@@ -113,18 +110,9 @@ void	check_character(char **map, t_elem *el)
 void	check_nbr_of_elem(t_elem *el)
 {
 	if (el->p != 1)
-	{
-		ft_putstr_fd("Error\nStarting position : K.O\n", 2);
-		exit (EXIT_FAILURE);
-	}
+		ft_errorexit("Error\nStarting position : K.O\n");
 	else if (el->e != 1)
-	{
-		ft_putstr_fd("Error\nExit : K.O\n", 2);
-		exit (EXIT_FAILURE);
-	}
+		ft_errorexit("Error\nExit : K.O\n");
 	else if (el->c != 1)
-	{
-		ft_putstr_fd("Error\nCollectible : K.O\n", 2);
-		exit (EXIT_FAILURE);
-	}
+		ft_errorexit("Error\nCollectible : K.O\n");
 }

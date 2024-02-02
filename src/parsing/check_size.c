@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:29:13 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 23:12:09 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:09:51 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,10 @@ int	check_size(char **map, t_data *data)
 		i++;
 	data->width = i;
 	if (data->height == data->width)
-	{
-		ft_putstr_fd("Error\nMap: this is a square", 2);
-		exit(EXIT_FAILURE);
-	}
+		ft_errorexit("Error\nMap: this is a square");
 	if (data->height < 3)
-	{
-		ft_putstr_fd("Error\nMap: not enought rows", 2);
-		exit(EXIT_FAILURE);
-	}
+		ft_errorexit("Error\nMap: not enought rows");
 	if (data->width < 3)
-	{
-		ft_putstr_fd("Error\nMap: not enough columns", 2);
-	}
+		ft_errorexit("Error\nMap: not enough columns");
 	return (0);
 }

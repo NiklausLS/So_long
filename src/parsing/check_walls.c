@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:35:53 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/31 09:43:07 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:10:47 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ int	check_side_walls(char **map)
 		{
 			j = ft_strlen(map[i]);
 			if (map[i][0] != '1' || map[i][j - 1] != '1')
-			{
-				ft_putstr_fd("Error\nMAP: side wall is wrong\n", 2);
-				exit (EXIT_FAILURE);
-			}
+				ft_errorexit("Error\nMAP: side wall is wrong\n");
 		}
 		i++;
 	}
@@ -45,10 +42,7 @@ int	check_top_wall(char **map)
 	while (map[0][i])
 	{
 		if (map[0][i] != '1')
-		{
-			ft_putstr_fd("Error\nMAP: top wall is wrong\n", 2);
-			exit (EXIT_FAILURE);
-		}
+			ft_errorexit("Error\nMAP: top wall is wrong\n");
 		i++;
 	}
 	return (0);
@@ -82,10 +76,7 @@ int	check_bottom_wall(char **map)
 	while (map[i][j])
 	{
 		if (map[i][j] != '1')
-		{
-			ft_putstr_fd("Error\nMAP: bottom wall is wrong\n", 2);
-			exit (EXIT_FAILURE);
-		}
+			ft_errorexit("Error\nMAP: bottom wall is wrong\n");
 		j++;
 	}
 	return (0);

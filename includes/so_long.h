@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 23:53:18 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:11:34 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,6 @@ void    make_map(t_data *data, char **map);
 //event
 
 //close the game
-
-//print errors in stdin
-void	print_error(int check);
 
 //to test my project
 //void	print_map(char **map, t_elem *el);

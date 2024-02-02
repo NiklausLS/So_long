@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 23:47:18 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:12:29 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,12 @@ int	main(int argc, char **argv)
 	}*/
 	data.mlx_ptr = mlx_init();
 	if (!data.mlx_ptr)
-	{
-		ft_putstr_fd("Error : mlx_init\n", 2);
-		exit (EXIT_FAILURE);
-	}
+		ft_errorexit("Error : mlx_init\n");
 	data.win_ptr = mlx_new_window(data.mlx_ptr, data.width * 32, data.height * 32, "so_long");
 	if (!data.win_ptr)
 	{
-		ft_putstr_fd("Error : mlx_new_window\n", 2);
 		free(data.mlx_ptr);
-		exit (EXIT_FAILURE);
+		ft_errorexit("Error : mlx_new_window\n");
 	}
 	init_textures(&data);
 	data.img = mlx_new_image(data.mlx_ptr, data.height * TILE_SIZE, data.width * TILE_SIZE);
