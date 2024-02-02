@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:08:27 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/01 14:42:14 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/02 10:03:04 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char *s, char c);
 
 int		ft_open_file(char *file);
+void    ft_errorexit(char *str);
 #endif

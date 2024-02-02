@@ -28,6 +28,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	  ft_calloc.c \
 	  ft_split.c \
 	  ft_open_file.c \
+	  ft_errorexit.c \
 
 INC_PATH = ./includes
 
