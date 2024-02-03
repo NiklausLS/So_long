@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/02/02 19:00:53 by nileempo         ###   ########.fr        #
+#    Updated: 2024/02/03 15:38:04 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ RM = rm -f
 #OS_NAME = $(shell uname -s)
 
 # Compilation rules
-CC = clang
+CC = gcc
 CFLAGS = -Wall -Werror -Wextra -Imlx/mlxos -fsanitize=address
 MLX_FLAGS = -framework OpenGL -framework AppKit
 

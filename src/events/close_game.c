@@ -6,13 +6,16 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 00:20:58 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 19:04:29 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/03 14:44:39 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//free my textures, destroy mlx and win ptr and return succes
+/*
+ * Free my textures, destroy mlx and win ptr and return succes
+ * @param t_data *data : ptr to my data structure
+ */
 int close_game(t_data *data)
 {
     free_textures(data);

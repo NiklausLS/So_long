@@ -6,13 +6,16 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 22:09:43 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 18:54:54 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/03 14:47:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//free all the images ressources
+/*
+ * free all my textures 
+ * @param t_data *data : ptr to my data structure
+*/
 void    free_textures(t_data *data)
 {
     mlx_destroy_image(data->mlx_ptr, data->ground);

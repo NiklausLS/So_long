@@ -6,13 +6,17 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:04 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 10:07:48 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/03 15:07:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//check the nbr of arguments
+/*
+ * Check the nbr of arguments
+ * @param argc
+ * @return 0 if it worked
+ */
 int	check_argc(int argc)
 {
 	if (argc < 2)

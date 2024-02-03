@@ -32,7 +32,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 INC_PATH = ./includes
 
-CC = clang
+CC = gcc
 
 RM = rm -f
 

@@ -6,12 +6,16 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/10 13:36:57 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 10:05:19 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/03 14:50:25 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
+/*
+ * Initialise all the texture and print an error on stderr if it fails
+ * @param t_data *data : ptr to my data structure
+*/
 void	init_textures(t_data *data)
 {
 	data->ground = mlx_xpm_file_to_image(data->mlx_ptr, "./images/ground.xpm", &data->width, &data->height);
