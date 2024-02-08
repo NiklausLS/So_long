@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 14:18:56 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 00:14:18 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@
 # include "../mlx/mlxos/mlx.h"
 # include "../libft/includes/libft.h"
 
-# define WIDTH 900
-# define HEIGHT 600
-# define TILE_SIZE 32
 # define ESC_KEY 53
+# define UP_KEY 13
+# define DOWN_KEY 1
+# define LEFT_KEY 0
+# define RIGHT_KEY 2
 
 typedef struct	s_data {
 	void	*mlx_ptr;
@@ -38,9 +39,6 @@ typedef struct	s_data {
 	void	*exit;
 	int		width;
 	int		height;
-}			t_data;
-
-typedef struct s_elements {
 	int		rows;
 	int		cols;
 	int		p;
@@ -54,7 +52,8 @@ typedef struct s_elements {
 	int		c_col;
 	int		c_ok;
 	int		e_ok;
-}			t_elem;
+	char	**map;
+}			t_data;
 
 //map structure
 
@@ -62,11 +61,12 @@ int		main(int argc, char **argv);
 
 //initialise my structures
 void	init_textures(t_data *data);
-void	init_structures(t_data *data, t_elem *el);
+void	init_struct_data(t_data *data);
 
 //free my structures
 void    free_textures(t_data *data);
 int		close_game(t_data *data);
+void    free_structures(t_data *data);
 //void	free_elements(t_elements *nbr);
 
 //basic error checks
@@ -75,29 +75,31 @@ int		check_argc(int argc);
 int		check_if_file(char *str);
 int		check_elem(char **map);
 
-//void	find_nbr_of_elem(char **map, t_elem *el);
-void	check_player(char **map, t_elem *el);
-void	check_exit(char **map, t_elem *el);
-void	check_collectible(char **map, t_elem *el);
-void	check_nbr_of_elem(t_elem *el);
+//void	find_nbr_of_elem(char **map, t_data *data);
+void	check_player(char **map, t_data *data);
+void	check_exit(char **map, t_data *data);
+void	check_collectible(char **map, t_data *data);
+void	check_nbr_of_elem(t_data *data);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);
 int		check_bottom_wall(char **map);
 int		check_size(char **map, t_data *data);
 int		check_form(char **map);
-char	**check_map(int argc, char **argv, t_elem *el, t_data *data);
+char	**check_map(int argc, char **argv, t_data *data);
 void	flood_fill(char **map, int row, int col, t_data *data);
-void	check_fill(char **map, t_elem *el);
+void	check_fill(char **map, t_data *data);
 
 //open file
-//char	**init_map(char *file, t_elem *el);
+//char	**init_map(char *file, t_data *data);
 
 void    make_map(t_data *data, char **map);
 //event
-int key_hook(int key, t_data *data);
+int		key_hook(int key, t_data *data);
+int		move_up(t_data *data);
+int 	move_down(t_data *data);
+int		move_left(t_data *data);
+int		move_right(t_data *data);
 
-//close the game
-int	close_game(t_data *data);
 //to test my project
-//void	print_map(char **map, t_elem *el);
+//void	print_map(char **map, t_data *data);
 #endif

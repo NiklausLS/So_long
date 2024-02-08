@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 21:04:36 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 14:49:13 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:52:43 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ void    flood_fill(char **map, int row, int col, t_data *data)
  * Check at the position of the elements P and E if they have been changed to 2
  * exit the program if they have not been found
  * (char **map) An array of string
- * (t_elem *el) A ptr to my structure
+ * (t_data *data) A ptr to my structure
  */
-void	check_fill(char **map, t_elem *el)
+void	check_fill(char **map, t_data *data)
 {
 	if (map == NULL)
 		ft_errorexit("Error\nMap is wrong\n");
-	if (map[el->c_row][el->c_col] == '2')
-		el->c_ok += 1;
-	if (map[el->e_row][el->e_col] == '2')
-		el->e_ok += 1;
-	if (el->e_ok < 1 || el->c_ok < 1)
+	if (map[data->c_row][data->c_col] == '2')
+		data->c_ok += 1;
+	if (map[data->e_row][data->e_col] == '2')
+		data->e_ok += 1;
+	if (data->e_ok < 1 || data->c_ok < 1)
 		ft_errorexit("Error\nNo path available\n");
-	if (el->e_ok == 1 && el->c_ok >= 1)
+	if (data->e_ok == 1 && data->c_ok >= 1)
 		ft_putstr("PATH IS AVAILABLE\n");
 }

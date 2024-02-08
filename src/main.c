@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:19 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 14:26:50 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:13:39 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,27 @@
 
 int	main(int argc, char **argv)
 {
-	t_data data;
-	t_elem	el;
+	t_data *data;
 	char	**map;
 
-	init_structures(&data, &el);
-	map = check_map(argc, argv, &el, &data);
-	data.mlx_ptr = mlx_init();
-	if (!data.mlx_ptr)
+	data = (t_data *)malloc(sizeof(t_data));
+	if (!data)
+		ft_errorexit("Error\nMemory allocation failed\n");
+	init_struct_data(data);
+	map = check_map(argc, argv, data);
+	data->mlx_ptr = mlx_init();
+	if (!data->mlx_ptr)
 		ft_errorexit("Error : mlx_init\n");
-	data.win_ptr = mlx_new_window(data.mlx_ptr, data.width * 32, data.height * 32, "so_long");
-	if (!data.win_ptr)
-	{
-		free(data.mlx_ptr);
+	data->win_ptr = mlx_new_window(data->mlx_ptr, data->width * 32, data->height * 32, "so_long");
+	if (!data->win_ptr)
 		ft_errorexit("Error : mlx_new_window\n");
-	}
-	init_textures(&data);
-	data.img = mlx_new_image(data.mlx_ptr, data.width * TILE_SIZE, data.height * TILE_SIZE);
-	make_map(&data, map);
-	mlx_hook(data.win_ptr, 2, 0, key_hook, &data);
-	mlx_hook(data.win_ptr, 17, 1L << 17, close_game, &data);
-	mlx_loop(data.mlx_ptr);
+	printf("MAIN : player is at %d, %d\n", data->p_row, data->p_col);
+	init_textures(data);
+	data->img = mlx_new_image(data->mlx_ptr, data->width * 32, data->height * 32);
+	make_map(data, map);
+	mlx_hook(data->win_ptr, 2, 0, key_hook, data);
+	mlx_hook(data->win_ptr, 17, 1L << 17, close_game, data);
+	mlx_loop(data->mlx_ptr);
+	free(data);
 	return (0);
 }

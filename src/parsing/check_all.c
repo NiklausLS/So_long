@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 14:58:58 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 23:56:31 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	**open_map(char *file)
 	return (map);
 }
 
-static char	**dup_map(char **map, t_data *data)
+char	**dup_map(char **map, t_data *data)
 {
 	char	**map2;
 	int		i;
@@ -76,60 +76,64 @@ static char	**dup_map(char **map, t_data *data)
 	return (map2);
 }
 
+// temporary print_map
+void	print_map(char **map)
+{
+	int	i = -1;
+
+	while (map[++i])
+		printf("map[%.2d]%s\n", i, map[i]);
+	return ;
+}
+
 //call all my test and return a map if they all pass
-char	**check_map(int argc, char **argv, t_elem *el, t_data *data)
+char	**check_map(int argc, char **argv, t_data *data)
 {
 	char	*file;
-	char	**map;
+	//char	**map;
 	char	**map2;
 
+	if (!data)
+		ft_errorexit("Error\nMemory allocation failed\n");
 	file = argv[1];
 	check_argc(argc);
-	map = open_map(file);
-	check_size(map, data);
-	map2 = dup_map(map, data);
+	data->map = open_map(file);
+	print_map(data->map);
+	if (!data->map)
+		ft_errorexit("Error\nMemory allocation failed\n");
+	if (!data)
+		ft_errorexit("Error\nMemory allocation failed\n");
+	check_size(data->map, data);
+	map2 = dup_map(data->map, data);
 	check_form(map2);
 	check_elem(map2);
-	check_collectible(map2, el);
-	check_exit(map2, el);
-	check_player(map2, el);
-	check_nbr_of_elem(el);
+	check_collectible(map2, data);
+	check_exit(map2, data);
+	check_player(map2, data);
+	check_nbr_of_elem(data);
 	check_side_walls(map2);
 	check_top_wall(map2);
 	check_bottom_wall(map2);
+/*
+	printf("PLAYER : p_row = %d, p_col = %d\n", data->p_row, data->p_col);
+	printf("COLLECTIBLE : c_row = %d, c_col = %d\n", data->c_row, data->c_col);
+	printf("EXIT : e_row = %d, e_col = %d\n", data->e_row, data->e_col);
+	printf("c_ok = %d\n", data->c_ok);
+	printf("e_ok = %d\n", data->e_ok);
 
-	printf("PLAYER : p_row = %d, p_col = %d\n", el->p_row, el->p_col);
-	printf("COLLECTIBLE : c_row = %d, c_col = %d\n", el->c_row, el->c_col);
-	printf("EXIT : e_row = %d, e_col = %d\n", el->e_row, el->e_col);
-	printf("c_ok = %d\n", el->c_ok);
-	printf("e_ok = %d\n", el->e_ok);
-	int		i = 0;
 	puts("map1\n");
-	while (map[i])
-	{
-		printf("%s\n", map[i]);
-		i++;
-	}
+	print_map(map);
 	puts("map2\n");
-	i = 0;
-	while (map2[i])
-	{
-		printf("%s\n", map2[i]);
-		i++;
-	}
-	flood_fill(map2, el->p_row, el->p_col, data);
+
+	print_map(map2);
+	flood_fill(map2, data->p_row, data->p_col, data);
 	puts("map2 après\n");
-	i = 0;
-	while (map2[i])
-	{
-		printf("%s\n", map2[i]);
-		i++;
-	}
-	check_fill(map2, el);
-	puts("blabla");
-	printf("c_ok = %d\n", el->c_ok);
-	printf("e_ok = %d\n", el->e_ok);
-	//ft_free_array(map);
-	//ft_free_array(map2);
-	return (map);
+
+	print_map(map2);
+	check_fill(map2, data);
+	printf("c_ok = %d\n", data->c_ok);
+	printf("e_ok = %d\n", data->e_ok);
+	*/
+	ft_free_array(map2);
+	return (data->map);
 }

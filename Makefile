@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/02/07 07:23:10 by nileempo         ###   ########.fr        #
+#    Updated: 2024/02/08 22:31:33 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRCS = ./src/main.c \
 	./src/textures/textures.c \
 	./src/events/close_game.c \
 	./src/events/key_hook.c \
+	./src/events/movements.c \
 
 OBJS = $(SRCS:.c=.o)
 

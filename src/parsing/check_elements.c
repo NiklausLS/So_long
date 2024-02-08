@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:06:51 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 01:55:17 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:58:01 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	check_elem(char **map)
 /* 
  * Check for player and get his position
  * @param (char **map) array of strings
- * @param (t_elem *el) ptr on my elem structure
+ * @param (t_data *data) ptr on my elem structure
 */
-void	check_player(char **map, t_elem *el)
+void	check_player(char **map, t_data *data)
 {
 	int	i;
 	int	j;
@@ -56,9 +56,9 @@ void	check_player(char **map, t_elem *el)
 		{
 			if (map[i][j] == 'P')
 			{
-				el->p = + 1;
-				el->p_row = i;
-				el->p_col = j;
+				data->p = + 1;
+				data->p_row = i;
+				data->p_col = j;
 			}
 			j++;
 		}
@@ -69,9 +69,9 @@ void	check_player(char **map, t_elem *el)
 /*
  * Check for exit and get his position
  * @param (char **map) array of string
- * @param (t_elem *el) ptr to my elem structure
+ * @param (t_data *data) ptr to my elem structure
  */
-void	check_exit(char **map, t_elem *el)
+void	check_exit(char **map, t_data *data)
 {
 	int	i;
 	int	j;
@@ -84,9 +84,9 @@ void	check_exit(char **map, t_elem *el)
 		{
 			if (map[i][j] == 'E')
 			{
-				el->e = + 1;
-				el->e_row = i;
-				el->e_col = j;
+				data->e = + 1;
+				data->e_row = i;
+				data->e_col = j;
 			}
 			j++;
 		}
@@ -97,9 +97,9 @@ void	check_exit(char **map, t_elem *el)
 /*
  * Check for collectible and get his position
  * @param (char **map) array of string
- * @param (t_elem *el) ptr to my elem structure
+ * @param (t_data *data) ptr to my elem structure
  */
-void	check_collectible(char **map, t_elem *el)
+void	check_collectible(char **map, t_data *data)
 {
 	int	i;
 	int	j;
@@ -112,9 +112,9 @@ void	check_collectible(char **map, t_elem *el)
 		{
 			if (map[i][j] == 'C')
 			{
-				el->c = + 1;
-				el->c_row = i;
-				el->c_col = j;
+				data->c = + 1;
+				data->c_row = i;
+				data->c_col = j;
 			}
 			j++;
 		}
@@ -124,14 +124,14 @@ void	check_collectible(char **map, t_elem *el)
 
 /*
  * Check if there are enough elements on the map
- * @param (t_elem *el) ptr to my elem structure
+ * @param (t_data *data) ptr to my elem structure
  */
-void	check_nbr_of_elem(t_elem *el)
+void	check_nbr_of_elem(t_data *data)
 {
-	if (el->p != 1)
+	if (data->p != 1)
 		ft_errorexit("Error\nStarting position : K.O\n");
-	else if (el->e != 1)
+	else if (data->e != 1)
 		ft_errorexit("Error\nExit : K.O\n");
-	else if (el->c < 1)
+	else if (data->c < 1)
 		ft_errorexit("Error\nCollectible : K.O\n");
 }
