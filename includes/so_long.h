@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:41 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 19:16:37 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:18:56 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ typedef struct	s_data {
 }			t_data;
 
 typedef struct s_elements {
-	//int		rows;
-	//int		cols;
+	int		rows;
+	int		cols;
 	int		p;
 	int		e;
 	int		c;
@@ -52,6 +52,8 @@ typedef struct s_elements {
 	int		e_col;
 	int		c_row;
 	int		c_col;
+	int		c_ok;
+	int		e_ok;
 }			t_elem;
 
 //map structure
@@ -74,9 +76,9 @@ int		check_if_file(char *str);
 int		check_elem(char **map);
 
 //void	find_nbr_of_elem(char **map, t_elem *el);
-void	check_collectible(char **map, t_elem *el);
+void	check_player(char **map, t_elem *el);
 void	check_exit(char **map, t_elem *el);
-void	check_character(char **map, t_elem *el);
+void	check_collectible(char **map, t_elem *el);
 void	check_nbr_of_elem(t_elem *el);
 int		check_side_walls(char **map);
 int		check_top_wall(char **map);
@@ -84,6 +86,8 @@ int		check_bottom_wall(char **map);
 int		check_size(char **map, t_data *data);
 int		check_form(char **map);
 char	**check_map(int argc, char **argv, t_elem *el, t_data *data);
+void	flood_fill(char **map, int row, int col, t_data *data);
+void	check_fill(char **map, t_elem *el);
 
 //open file
 //char	**init_map(char *file, t_elem *el);

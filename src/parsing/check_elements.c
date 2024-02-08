@@ -6,13 +6,17 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:06:51 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 10:09:03 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 01:55:17 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//check each element of the map to see if there is something else than PEC10
+/*
+ * Check for elements other than 0 1 P E C
+ * @param (char **map) array of strings
+ * @return 0 if no other elements have been found
+*/
 int	check_elem(char **map)
 {
 	int	i;
@@ -34,8 +38,12 @@ int	check_elem(char **map)
 	return (0);
 }
 
-//check for collectible and get his position 
-void	check_collectible(char **map, t_elem *el)
+/* 
+ * Check for player and get his position
+ * @param (char **map) array of strings
+ * @param (t_elem *el) ptr on my elem structure
+*/
+void	check_player(char **map, t_elem *el)
 {
 	int	i;
 	int	j;
@@ -48,7 +56,7 @@ void	check_collectible(char **map, t_elem *el)
 		{
 			if (map[i][j] == 'P')
 			{
-				el->p += 1;
+				el->p = + 1;
 				el->p_row = i;
 				el->p_col = j;
 			}
@@ -58,7 +66,11 @@ void	check_collectible(char **map, t_elem *el)
 	}
 }
 
-//check for exit and his position
+/*
+ * Check for exit and get his position
+ * @param (char **map) array of string
+ * @param (t_elem *el) ptr to my elem structure
+ */
 void	check_exit(char **map, t_elem *el)
 {
 	int	i;
@@ -72,7 +84,7 @@ void	check_exit(char **map, t_elem *el)
 		{
 			if (map[i][j] == 'E')
 			{
-				el->e += 1;
+				el->e = + 1;
 				el->e_row = i;
 				el->e_col = j;
 			}
@@ -82,8 +94,12 @@ void	check_exit(char **map, t_elem *el)
 	}
 }
 
-//check for character and his position 
-void	check_character(char **map, t_elem *el)
+/*
+ * Check for collectible and get his position
+ * @param (char **map) array of string
+ * @param (t_elem *el) ptr to my elem structure
+ */
+void	check_collectible(char **map, t_elem *el)
 {
 	int	i;
 	int	j;
@@ -96,7 +112,7 @@ void	check_character(char **map, t_elem *el)
 		{
 			if (map[i][j] == 'C')
 			{
-				el->c += 1;
+				el->c = + 1;
 				el->c_row = i;
 				el->c_col = j;
 			}
@@ -106,13 +122,16 @@ void	check_character(char **map, t_elem *el)
 	}
 }
 
-//check if there are enough elements on the map
+/*
+ * Check if there are enough elements on the map
+ * @param (t_elem *el) ptr to my elem structure
+ */
 void	check_nbr_of_elem(t_elem *el)
 {
 	if (el->p != 1)
 		ft_errorexit("Error\nStarting position : K.O\n");
 	else if (el->e != 1)
 		ft_errorexit("Error\nExit : K.O\n");
-	else if (el->c != 1)
+	else if (el->c < 1)
 		ft_errorexit("Error\nCollectible : K.O\n");
 }

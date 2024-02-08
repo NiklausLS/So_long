@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:58:37 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/22 19:01:46 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/07 22:08:31 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static char	*get_last(char *memory)
 	while (memory[i])
 		last[j++] = memory[i++];
 	last[j] = '\0';
-	free(memory);
+	//free(memory);
 	return (last);
 }
 
@@ -104,6 +104,8 @@ char	*get_next_line(int fd)
 	if (!memory)
 		return (NULL);
 	line = gt_line(memory);
+	if (!line && !memory)
+		return (NULL);
 	memory = get_last(memory);
 	return (line);
 }

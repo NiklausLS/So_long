@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 01:03:32 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/03 14:57:53 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/06 16:33:04 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ static void	init_struct_elements(t_elem *el)
 	el->e_col = -1;
 	el->c_row = -1;
 	el->c_col = -1;
+	el->c_ok = 0;
+	el->e_ok = 0;
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:24:04 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/03 15:07:18 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/03 15:48:52 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
  * Check the nbr of arguments
  * @param argc
- * @return 0 if it worked
+ * @return 0 if the function worked
  */
 int	check_argc(int argc)
 {
@@ -26,7 +26,11 @@ int	check_argc(int argc)
 	return (0);
 }
 
-//check if the file passed as argument finish by .ber
+/*
+ * check if the file passed as parameter finish by .ber
+ * @param char *str : the file
+ * @return 0 if the function worked
+ */
 int	check_ber(char *str)
 {
 	int	i;
@@ -40,7 +44,11 @@ int	check_ber(char *str)
 	return (0);
 }
 
-//check if the arg is a file
+/* 
+ * Check if parameter is a file
+ * @param char *str : the file
+ * @return 0 if the function worked
+ */
 int	check_if_file(char *str)
 {
 	int	fd;

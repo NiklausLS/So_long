@@ -6,13 +6,18 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:29:13 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 10:09:51 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:15:36 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-//check the size of my map and stock it
+/*
+ * Check the size of my map and stock it
+ * @param (**map) array of string
+ * @param (t_data *data) ptr to my data structure 
+ * @return 0 if the function worked
+ */
 int	check_size(char **map, t_data *data)
 {
 	int	i;
