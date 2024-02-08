@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 06:23:47 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 14:48:01 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/08 14:58:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ char	**check_map(int argc, char **argv, t_elem *el, t_data *data)
 	puts("blabla");
 	printf("c_ok = %d\n", el->c_ok);
 	printf("e_ok = %d\n", el->e_ok);
-
+	//ft_free_array(map);
+	//ft_free_array(map2);
 	return (map);
 }
