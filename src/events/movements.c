@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:03:35 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/09 00:56:20 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:41:43 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,7 @@ static void	print_map(char **map)
 
 int	move_up(t_data *data)
 {
-    print_map(data->map);
-    printf("move up\n");
-    printf("data->p_row = %d\n", data->p_row);
-    printf("data->rows = %d\n", data->rows);
-    printf("data->cols = %d\n", data->cols);
-    if (data->p_row > 1 && data->map[data->p_row - 1][data->p_col] != '1')
+    if (data->p_row >= 1 && data->map[data->p_row - 1][data->p_col] != '1')
     {
         data->map[data->p_row][data->p_col] = '0';
         data->p_row = data->p_row - 1; 
@@ -42,7 +37,7 @@ int	move_up(t_data *data)
 
 int	move_down(t_data *data)
 {
-    if (data->p_row > 1 && data->p_row < (data->rows - 2)
+    if (data->p_row >= 1 && data->p_row < (data->rows - 2)
 		&& data->map[data->p_row + 1][data->p_col] != '1')
     {
         data->map[data->p_row][data->p_col] = '0';
@@ -71,7 +66,7 @@ int	move_left(t_data *data)
 
 int	move_right(t_data *data)
 {
-	if (data->p_col < (data->cols - 2) && data->map[data->p_row + 1][data->p_col] != '1')
+	if (data->p_col < (data->cols - 2) && data->map[data->p_row][data->p_col + 1] != '1')
 	{
 		data->map[data->p_row][data->p_col] = '0';
         data->p_col = data->p_col + 1;
