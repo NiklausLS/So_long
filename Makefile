@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/02/09 18:55:45 by nileempo         ###   ########.fr        #
+#    Updated: 2024/02/09 22:35:47 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,33 +45,44 @@ MLX_PATH = ./mlx/mlxos/
 
 NAME = so_long
 RM = rm -f
-#OS_NAME = $(shell uname -s)
+OS_NAME = $(shell uname -s)
 
 # Compilation rules
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra -Imlx/mlxos -fsanitize=address
-MLX_FLAGS = -framework OpenGL -framework AppKit
+CFLAGS = -Wall -Werror -Wextra #-fsanitize=address
 
-#ifeq ($(OS_NAME), Darwin)
-##	MLX_PATH = ./mlx/mlxos
+# Compilation flags 
+ifeq ($(OS_NAME), Darwin)
+	CFLAGS += -Imlx/mlxos
+	MLX_PATH = ./mlx/mlxos
+	MLX_FLAGS = -framework OpenGL -framework AppKit
+endif
 
-#endif
-
-#ifeq ($(OS_NAME), Linux)
-#	CFLAGS += -Imlx/linux
-#	MLX_PATH = ./mlx/linux
-
-#endif
+ifeq ($(OS_NAME), Linux)
+	CFLAGS += -Imlx/mlxlinux 
+	MLX_PATH = ./mlx/mlxlinux
+	MLX_FLAGS = -lXext -lX11 -lm
+endif
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(MLX_PATH) -I$(INC_PATH) -c $< -o $@
 	@echo "$(GREEN)--- Making objets files : $(YELLOW)$@ $(GREEN)---$(RESET)"
 
+ifeq ($(OS_NAME), Darwin)
 $(NAME): $(OBJS)
 	make -C $(LIBFT_PATH)
 	make -C $(MLX_PATH)
 	@echo "$(GREEN)--- Making the executable : $(YELLOW)$(NAME) $(GREEN)---$(RESET)"
 	$(CC) $(CFLAGS) -Lmlx/mlxos -lmlx $(MLX_FLAGS) $(LIBFT_PATH)/libft.a $(OBJS) -o $(NAME)
+endif
+
+ifeq ($(OS_NAME), Linux)
+$(NAME): $(OBJS)
+	make -C $(LIBFT_PATH)
+	make -C $(MLX_PATH)
+	@echo "$(GREEN)--- Making the executable : $(YELLOW)$(NAME) $(GREEN)---$(RESET)"
+	$(CC) $(CFLAGS) -Lmlx/mlxlinux -lmlx $(MLX_FLAGS) $(LIBFT_PATH)/libft.a $(OBJS) -o $(NAME)
+endif
 
 lib_libft:
 	@echo "Make LIBFT"
