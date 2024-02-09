@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 21:04:36 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 18:52:43 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:34:21 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@
  * @param (int row) Actual position in row
  * @param (int col) Actual position in col
  */
-void    flood_fill(char **map, int row, int col, t_data *data)
+void	flood_fill(char **map, int row, int col, t_data *data)
 {
-
-	if (row < 0 || col < 0 || map[row][col] == '1' 
+	if (row < 0 || col < 0 || map[row][col] == '1'
 		|| row > data->height || col > data->width
 		|| map[row][col] == '2')
-		return;
-    map[row][col] = '2';
+		return ;
+	map[row][col] = '2';
 	flood_fill(map, row + 1, col, data);
-    flood_fill(map, row - 1, col, data);
-    flood_fill(map, row, col + 1, data);
-    flood_fill(map, row, col -1, data);
+	flood_fill(map, row - 1, col, data);
+	flood_fill(map, row, col + 1, data);
+	flood_fill(map, row, col -1, data);
 }
 
 /*

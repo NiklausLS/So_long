@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:06:51 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 18:58:01 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:33:13 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	check_player(char **map, t_data *data)
 		{
 			if (map[i][j] == 'P')
 			{
-				data->p = + 1;
+				data->p = +1;
 				data->p_row = i;
 				data->p_col = j;
 			}
@@ -84,7 +84,7 @@ void	check_exit(char **map, t_data *data)
 		{
 			if (map[i][j] == 'E')
 			{
-				data->e = + 1;
+				data->e = +1;
 				data->e_row = i;
 				data->e_col = j;
 			}
@@ -112,7 +112,7 @@ void	check_collectible(char **map, t_data *data)
 		{
 			if (map[i][j] == 'C')
 			{
-				data->c = + 1;
+				data->c = +1;
 				data->c_row = i;
 				data->c_col = j;
 			}

@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:35:53 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 01:25:15 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:44:12 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	check_bottom_wall(char **map)
  * if the map is a rectangle
  * @param (char **map) array of string
  * @return 0 if everything worked
- */ 
+ */
 int	check_form(char **map)
 {
 	int	i;

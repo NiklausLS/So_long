@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 18:58:02 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/09 00:53:20 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:49:21 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,31 +18,26 @@
  * @param t_data *data : ptr to my data structure
  * @return : return 0 if everything is ok
 */
-int key_hook(int key, t_data *data)
+int	key_hook(int key, t_data *data)
 {
-    printf("key pressed = %d\n", key);
-    printf("data->p_row = %d\n", data->p_row);
-    printf("data->rows = %d\n", data->rows);
-    printf("data->cols = %d\n", data->cols);
-    printf("KEY HOOK : player is at %d, %d\n", data->p_row, data->p_col);
-    if (key == ESC_KEY)
-        close_game(data);
-    if (key == UP_KEY)
-        move_up(data);
-    if (key == DOWN_KEY)
-    {
-        printf("Down_key\n");
-        move_down(data);
-    }
-    if (key == LEFT_KEY)
-    {
-        printf("Left_key\n");
-        move_left(data);
-    }
-    if (key == RIGHT_KEY)
-    {
-        printf("Right_key\n");
-        move_right(data);
-    }
-    return (0);
+	int	tmp;
+
+	tmp = 0;
+	tmp = data->move;
+	if (key == ESC_KEY)
+		close_game(data);
+	if (key == UP_KEY)
+		move_up(data);
+	if (key == DOWN_KEY)
+		move_down(data);
+	if (key == LEFT_KEY)
+		move_left(data);
+	if (key == RIGHT_KEY)
+		move_right(data);
+	if (tmp != data->move)
+	{
+		ft_putnbr(data->move);
+		ft_putchar('\n');
+	}
+	return (0);
 }

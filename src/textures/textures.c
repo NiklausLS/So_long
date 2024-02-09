@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:02:05 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 19:31:31 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:30:41 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,29 +19,28 @@
  */
 void	make_map(t_data *data, char **map)
 {
-    int	x;
-    int	y;
+	int	row;
+	int	col;
 
-    y = 0;
-    while (map[y])
-    {
-        x = 0;
-        while (map[y][x])
-        {
-            mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->ground, x * 32, y * 32);
-            if (map[y][x] == '0')
-                mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->ground, x * 32, y * 32);
-            else if (map[y][x] == '1')
-                mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->wall, x * 32, y * 32);
-            else if (map[y][x] == 'P')
-                mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->player, x * 32, y * 32);
-            else if (map[y][x] == 'C')
-                mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->collectible, x * 32, y * 32);
-            else if (map[y][x] == 'E')
-                mlx_put_image_to_window(data->mlx_ptr, data->win_ptr, data->exit, x * 32, y * 32);
-            x++;
-        }
-        y++;
-    }
+	row = 0;
+	while (map[row])
+	{
+		col = 0;
+		while (map[row][col])
+		{
+			get_ground(data, row, col);
+			if (map[row][col] == '0')
+				get_ground(data, row, col);
+			else if (map[row][col] == '1')
+				get_wall(data, row, col);
+			else if (map[row][col] == 'P')
+				get_player(data, row, col);
+			else if (map[row][col] == 'C')
+				get_collectible(data, row, col);
+			else if (map[row][col] == 'E')
+				get_exit(data, row, col);
+			col++;
+		}
+		row++;
+	}
 }
-

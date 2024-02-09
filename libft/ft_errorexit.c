@@ -6,14 +6,14 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 07:44:56 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/02 07:48:54 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:54:02 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void    ft_errorexit(char *str)
+void	ft_errorexit(char *str)
 {
-    ft_putstr_fd(str, 2);
-    exit(EXIT_FAILURE);
+	ft_putstr_fd(str, 2);
+	exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 14:59:51 by nileempo          #+#    #+#             */
-/*   Updated: 2024/01/22 19:02:11 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:18:22 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ char	*ft_gnl_strjoin(char *memory, char *buf)
 		memory = (char *)malloc(sizeof(char) * 1);
 		memory[0] = '\0';
 	}
-	dest = malloc(sizeof(char) * (ft_gnl_strlen(memory) + (ft_gnl_strlen(buf) + 1)));
+	dest = malloc(sizeof(char) * (ft_gnl_strlen(memory)
+				+ (ft_gnl_strlen(buf) + 1)));
 	if (!dest)
 		return (NULL);
 	while (memory[++i])

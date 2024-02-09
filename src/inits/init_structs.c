@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 01:03:32 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 18:57:04 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:15:59 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
  * Initialise my data structure
  * @param t_data *data : ptr to my data structure
  */
-void    init_struct_data(t_data *data)
+void	init_struct_data(t_data *data)
 {
-    data->mlx_ptr = NULL;
+	data->mlx_ptr = NULL;
 	data->win_ptr = NULL;
-    data->img = NULL;
+	data->img = NULL;
 	data->ground = NULL;
 	data->wall = NULL;
 	data->collectible = NULL;
@@ -37,4 +37,5 @@ void    init_struct_data(t_data *data)
 	data->c_col = -1;
 	data->c_ok = 0;
 	data->e_ok = 0;
+	data->move = 0;
 }

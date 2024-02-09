@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 14:08:27 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 14:56:20 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:57:26 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <stdarg.h>
 
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -49,8 +52,7 @@ void	*ft_calloc(size_t ecount, size_t esize);
 char	*ft_itoa(int n);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	**ft_split(char *s, char c);
-
 int		ft_open_file(char *file);
-void    ft_errorexit(char *str);
-void    ft_free_array(char **array);
+void	ft_errorexit(char *str);
+void	ft_free_array(char **array);
 #endif

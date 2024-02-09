@@ -30,6 +30,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	  ft_open_file.c \
 	  ft_errorexit.c \
 	  ft_free_array.c \
+	  ft_putchar.c ft_putnbr.c \
 
 INC_PATH = ./includes
 

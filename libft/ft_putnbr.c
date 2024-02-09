@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_open_file.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 14:36:29 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/09 20:56:29 by nileempo         ###   ########.fr       */
+/*   Created: 2024/02/09 20:23:03 by nileempo          #+#    #+#             */
+/*   Updated: 2024/02/09 20:37:58 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-//take the file name as parameter and return fd
-int	ft_open_file(char *file)
+void	ft_putnbr(int n)
 {
-	int	fd;
-
-	fd = open(file, O_RDONLY);
-	if (fd == -1)
+	if (n == -2147483648)
+		write (1, "-2147483648", 11);
+	else if (n < 0)
 	{
-		perror("Error\nOpen file failed");
-		exit(EXIT_FAILURE);
+		write (1, "-", 1);
+		n *= -1;
 	}
-	return (fd);
+	else if (n > 9)
+	{
+		ft_putnbr(n / 10);
+		ft_putchar(n % 10 + '0');
+	}
+	else if (n >= 0 && n <= 9)
+		ft_putchar(n + '0');
 }

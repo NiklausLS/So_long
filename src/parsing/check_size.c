@@ -6,7 +6,7 @@
 /*   By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 09:29:13 by nileempo          #+#    #+#             */
-/*   Updated: 2024/02/08 23:45:13 by nileempo         ###   ########.fr       */
+/*   Updated: 2024/02/09 18:43:50 by nileempo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int	check_size(char **map, t_data *data)
 {
 	int	i;
-	
+
 	i = 0;
 	while (map[i])
 		i++;
