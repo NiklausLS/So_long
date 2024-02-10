@@ -6,7 +6,7 @@
 #    By: nileempo <nileempo@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 06:22:55 by nileempo          #+#    #+#              #
-#    Updated: 2024/02/09 22:35:47 by nileempo         ###   ########.fr        #
+#    Updated: 2024/02/10 15:41:26 by nileempo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS = ./src/main.c \
 	./gnl/get_next_line_utils.c \
 	./src/inits/init_structs.c \
 	./src/inits/init_map.c \
-	./src//freeing/free_structures.c \
+	./src/freeing/free_structures.c \
 	./src/parsing/check_args.c \
 	./src/parsing/check_elements.c \
 	./src/parsing/check_walls.c \
@@ -73,7 +73,7 @@ $(NAME): $(OBJS)
 	make -C $(LIBFT_PATH)
 	make -C $(MLX_PATH)
 	@echo "$(GREEN)--- Making the executable : $(YELLOW)$(NAME) $(GREEN)---$(RESET)"
-	$(CC) $(CFLAGS) -Lmlx/mlxos -lmlx $(MLX_FLAGS) $(LIBFT_PATH)/libft.a $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) -L$(MLX_PATH) -lmlx $(MLX_FLAGS) $(LIBFT_PATH)/libft.a $(OBJS) -o $(NAME)
 endif
 
 ifeq ($(OS_NAME), Linux)
@@ -81,7 +81,7 @@ $(NAME): $(OBJS)
 	make -C $(LIBFT_PATH)
 	make -C $(MLX_PATH)
 	@echo "$(GREEN)--- Making the executable : $(YELLOW)$(NAME) $(GREEN)---$(RESET)"
-	$(CC) $(CFLAGS) -Lmlx/mlxlinux -lmlx $(MLX_FLAGS) $(LIBFT_PATH)/libft.a $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) -L$(MLX_PATH) -lmlx $(MLX_FLAGS) $(LIBFT_PATH)/libft.a $(OBJS) -o $(NAME)
 endif
 
 lib_libft:
